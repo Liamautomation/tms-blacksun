@@ -1,1 +1,108 @@
-InVzZSBjbGllbnQiOwoKaW1wb3J0IExpbmsgZnJvbSAibmV4dC9saW5rIjsKaW1wb3J0IEltYWdlIGZyb20gIm5leHQvaW1hZ2UiOwppbXBvcnQgeyB1c2VQYXRobmFtZSB9IGZyb20gIm5leHQvbmF2aWdhdGlvbiI7CmltcG9ydCB7IE1lbnUsIFgsIENsaXBib2FyZENoZWNrIH0gZnJvbSAibHVjaWRlLXJlYWN0IjsKaW1wb3J0IHsgdXNlU3RhdGUgfSBmcm9tICJyZWFjdCI7Cgpjb25zdCBwYWdlcyA9IFsKICB7IGhyZWY6ICIvY29tcHJlbmRyZS1sZXMtdG1zIiwgbGFiZWw6ICJDb21wcmVuZHJlIiB9LAogIHsgaHJlZjogIi9maWNoZXMtZGUtcG9zdGUiLCBsYWJlbDogIkZpY2hlcyBkZSBwb3N0ZSIgfSwKICB7IGhyZWY6ICIvYm9ubmVzLXByYXRpcXVlcyIsIGxhYmVsOiAiQm9ubmVzIHByYXRpcXVlcyIgfSwKICB7IGhyZWY6ICIvYXV0by1ldmFsdWF0aW9uIiwgbGFiZWw6ICJBdXRvLcOpdmFsdWF0aW9uIiB9LAogIHsgaHJlZjogIi9yZXNzb3VyY2VzIiwgbGFiZWw6ICJSZXNzb3VyY2VzIiB9LAogIHsgaHJlZjogIi9kdWVycCIsIGxhYmVsOiAiRFVFUlAiIH0sCiAgeyBocmVmOiAiL3NpZ25hbGVtZW50IiwgbGFiZWw6ICJTaWduYWxlbWVudCIgfSwKXTsKCmV4cG9ydCBmdW5jdGlvbiBOYXYoKSB7CiAgY29uc3QgcGF0aG5hbWUgPSB1c2VQYXRobmFtZSgpOwogIGNvbnN0IFtvcGVuLCBzZXRPcGVuXSA9IHVzZVN0YXRlKGZhbHNlKTsKCiAgcmV0dXJuICgKICAgIDxoZWFkZXIgY2xhc3NOYW1lPSJzdGlja3kgdG9wLTAgei01MCBweC0zIHB0LTMgc206cHgtNCBzbTpwdC00Ij4KICAgICAgPGRpdiBjbGFzc05hbWU9Im14LWF1dG8gbWF4LXctN3hsIj4KICAgICAgICA8ZGl2IGNsYXNzTmFtZT0iZmxleCBpdGVtcy1jZW50ZXIganVzdGlmeS1iZXR3ZWVuIGdhcC0yIHJvdW5kZWQtZnVsbCBiZy1jYXJkLzg1IHB5LTIgcGwtNCBwci0yIGJhY2tkcm9wLWJsdXItbWQgc2hhZG93LVswXzZweF8yMnB4Xy0xNHB4X3JnYmEoMjAwLDE1MCw0NiwwLjEyKV0gYm9yZGVyIGJvcmRlci1ib3JkZXIiPgogICAgICAgICAgey8qIExvZ28gKi99CiAgICAgICAgICA8TGluayBocmVmPSIvIiBjbGFzc05hbWU9InNocmluay0wIGZsZXggaXRlbXMtY2VudGVyIiBhcmlhLWxhYmVsPSJCbGFjayBTdW4gVmlsbGV0YW5ldXNlIOKAlCBBY2N1ZWlsIj4KICAgICAgICAgICAgPEltYWdlCiAgICAgICAgICAgICAgc3JjPSIvaW1hZ2VzL2xvZ28ucG5nIgogICAgICAgICAgICAgIGFsdD0iQmxhY2sgU3VuIFZpbGxldGFuZXVzZSIKICAgICAgICAgICAgICB3aWR0aD17MzMzMX0KICAgICAgICAgICAgICBoZWlnaHQ9ezI4MTZ9CiAgICAgICAgICAgICAgY2xhc3NOYW1lPSJoLTggdy1hdXRvIHNtOmgtMTAiCiAgICAgICAgICAgICAgcHJpb3JpdHkKICAgICAgICAgICAgLz4KICAgICAgICAgIDwvTGluaz4KCiAgICAgICAgICB7LyogRGVza3RvcCBuYXYgKi99CiAgICAgICAgICA8bmF2IGFyaWEtbGFiZWw9Ik5hdmlnYXRpb24gcHJpbmNpcGFsZSIgY2xhc3NOYW1lPSJoaWRkZW4geGw6YmxvY2siPgogICAgICAgICAgICA8dWwgY2xhc3NOYW1lPSJmbGV4IGl0ZW1zLWNlbnRlciBnYXAtMC41Ij4KICAgICAgICAgICAgICA8bGk+CiAgICAgICAgICAgICAgICA8TGluawogICAgICAgICAgICAgICAgICBocmVmPSIvIgogICAgICAgICAgICAgICAgICBjbGFzc05hbWU9e2BibG9jayByb3VuZGVkLWZ1bGwgcHgtMy41IHB5LTIgdGV4dC1bMTNweF0gZm9udC1tZWRpdW0gdHJhbnNpdGlvbi1jb2xvcnMgJHtwYXRobmFtZSA9PT0gIi8iID8gImJnLWJyYW5kIHRleHQtcGFwZXIiIDogInRleHQtaW5rLXNvZnQgaG92ZXI6YmctYnJhbmQtbWlzdCBob3Zlcjp0ZXh0LWluayJ9YH0KICAgICAgICAgICAgICAgID4KICAgICAgICAgICAgICAgICAgQWNjdWVpbAogICAgICAgICAgICAgICAgPC9MaW5rPgogICAgICAgICAgICAgIDwvbGk+CiAgICAgICAgICAgICAge3BhZ2VzLm1hcCgocCkgPT4gewogICAgICAgICAgICAgICAgY29uc3QgYWN0aXZlID0gcGF0aG5hbWUgPT09IHAuaHJlZjsKICAgICAgICAgICAgICAgIHJldHVybiAoCiAgICAgICAgICAgICAgICAgIDxsaSBrZXk9e3AuaHJlZn0+CiAgICAgICAgICAgICAgICAgICAgPExpbmsKICAgICAgICAgICAgICAgICAgICAgIGhyZWY9e3AuaHJlZn0KICAgICAgICAgICAgICAgICAgICAgIGNsYXNzTmFtZT17YGJsb2NrIHJvdW5kZWQtZnVsbCBweC0zLjUgcHktMiB0ZXh0LVsxM3B4XSBmb250LW1lZGl1bSB0cmFuc2l0aW9uLWNvbG9ycyAke2FjdGl2ZSA/ICJiZy1icmFuZCB0ZXh0LXBhcGVyIiA6ICJ0ZXh0LWluay1zb2Z0IGhvdmVyOmJnLWJyYW5kLW1pc3QgaG92ZXI6dGV4dC1pbmsifWB9CiAgICAgICAgICAgICAgICAgICAgPgogICAgICAgICAgICAgICAgICAgICAge3AubGFiZWx9CiAgICAgICAgICAgICAgICAgICAgPC9MaW5rPgogICAgICAgICAgICAgICAgICA8L2xpPgogICAgICAgICAgICAgICAgKTsKICAgICAgICAgICAgICB9KX0KICAgICAgICAgICAgPC91bD4KICAgICAgICAgIDwvbmF2PgoKICAgICAgICAgIHsvKiBDVEEgKyBNb2JpbGUgdG9nZ2xlICovfQogICAgICAgICAgPGRpdiBjbGFzc05hbWU9ImZsZXggaXRlbXMtY2VudGVyIGdhcC0yIj4KICAgICAgICAgICAgPExpbmsKICAgICAgICAgICAgICBocmVmPSIvYXV0by1ldmFsdWF0aW9uIgogICAgICAgICAgICAgIGNsYXNzTmFtZT0iaGlkZGVuIGl0ZW1zLWNlbnRlciBnYXAtMiByb3VuZGVkLWZ1bGwgYmctaW5rIHB4LTQgcHktMi41IHRleHQtWzEzcHhdIGZvbnQtc2VtaWJvbGQgdGV4dC1wYXBlciB0cmFuc2l0aW9uLXRyYW5zZm9ybSBob3ZlcjotdHJhbnNsYXRlLXktMC41IHNtOmlubGluZS1mbGV4IHhsOmhpZGRlbiAyeGw6aW5saW5lLWZsZXgiCiAgICAgICAgICAgID4KICAgICAgICAgICAgICA8Q2xpcGJvYXJkQ2hlY2sgY2xhc3NOYW1lPSJoLTMuNSB3LTMuNSIgLz4KICAgICAgICAgICAgICDDiXZhbHVlcgogICAgICAgICAgICA8L0xpbms+CiAgICAgICAgICAgIDxidXR0b24KICAgICAgICAgICAgICB0eXBlPSJidXR0b24iCiAgICAgICAgICAgICAgYXJpYS1leHBhbmRlZD17b3Blbn0KICAgICAgICAgICAgICBhcmlhLWNvbnRyb2xzPSJtZW51LW1vYmlsZSIKICAgICAgICAgICAgICBvbkNsaWNrPXsoKSA9PiBzZXRPcGVuKCFvcGVuKX0KICAgICAgICAgICAgICBjbGFzc05hbWU9ImlubGluZS1mbGV4IGgtMTEgdy0xMSBpdGVtcy1jZW50ZXIganVzdGlmeS1jZW50ZXIgcm91bmRlZC1mdWxsIGJnLWJyYW5kLXNvZnQgdGV4dC1icmFuZCB0cmFuc2l0aW9uLWNvbG9ycyBob3ZlcjpiZy1icmFuZC1taXN0IHhsOmhpZGRlbiIKICAgICAgICAgICAgPgogICAgICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT0ic3Itb25seSI+e29wZW4gPyAiRmVybWVyIiA6ICJNZW51In08L3NwYW4+CiAgICAgICAgICAgICAge29wZW4gPyA8WCBjbGFzc05hbWU9ImgtNSB3LTUiIC8+IDogPE1lbnUgY2xhc3NOYW1lPSJoLTUgdy01IiAvPn0KICAgICAgICAgICAgPC9idXR0b24+CiAgICAgICAgICA8L2Rpdj4KICAgICAgICA8L2Rpdj4KICAgICAgPC9kaXY+CgogICAgICB7LyogTW9iaWxlIG1lbnUgKi99CiAgICAgIHtvcGVuICYmICgKICAgICAgICA8ZGl2IGlkPSJtZW51LW1vYmlsZSIgY2xhc3NOYW1lPSJteC1hdXRvIG1heC13LTd4bCBweC0zIHB0LTIgeGw6aGlkZGVuIj4KICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJyb3VuZGVkLTJ4bCBiZy1jYXJkLzk1IGJhY2tkcm9wLWJsdXItbWQgYm9yZGVyIGJvcmRlci1ib3JkZXIgcC00IHNoYWRvdy1sZyI+CiAgICAgICAgICAgIDxuYXY+CiAgICAgICAgICAgICAgPHVsIGNsYXNzTmFtZT0iZ3JpZCBnYXAtMSI+CiAgICAgICAgICAgICAgICA8bGk+PExpbmsgaHJlZj0iLyIgb25DbGljaz17KCkgPT4gc2V0T3BlbihmYWxzZSl9IGNsYXNzTmFtZT17YGJsb2NrIHJvdW5kZWQteGwgcHgtNCBweS0yLjUgdGV4dC1zbSBmb250LW1lZGl1bSAke3BhdGhuYW1lID09PSAiLyIgPyAiYmctYnJhbmQgdGV4dC1wYXBlciIgOiAidGV4dC1pbmstc29mdCBob3ZlcjpiZy1icmFuZC1taXN0IGhvdmVyOnRleHQtaW5rIn1gfT5BY2N1ZWlsPC9MaW5rPjwvbGk+CiAgICAgICAgICAgICAgICB7cGFnZXMubWFwKChwKSA9PiAoCiAgICAgICAgICAgICAgICAgIDxsaSBrZXk9e3AuaHJlZn0+CiAgICAgICAgICAgICAgICAgICAgPExpbmsgaHJlZj17cC5ocmVmfSBvbkNsaWNrPXsoKSA9PiBzZXRPcGVuKGZhbHNlKX0gY2xhc3NOYW1lPXtgYmxvY2sgcm91bmRlZC14bCBweC00IHB5LTIuNSB0ZXh0LXNtIGZvbnQtbWVkaXVtICR7cGF0aG5hbWUgPT09IHAuaHJlZiA/ICJiZy1icmFuZCB0ZXh0LXBhcGVyIiA6ICJ0ZXh0LWluay1zb2Z0IGhvdmVyOmJnLWJyYW5kLW1pc3QgaG92ZXI6dGV4dC1pbmsifWB9PntwLmxhYmVsfTwvTGluaz4KICAgICAgICAgICAgICAgICAgPC9saT4KICAgICAgICAgICAgICAgICkpfQogICAgICAgICAgICAgIDwvdWw+CiAgICAgICAgICAgIDwvbmF2PgogICAgICAgICAgPC9kaXY+CiAgICAgICAgPC9kaXY+CiAgICAgICl9CiAgICA8L2hlYWRlcj4KICApOwp9Cg==
+"use client";
+
+import Link from "next/link";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
+import { Menu, X, ClipboardCheck } from "lucide-react";
+import { useState } from "react";
+
+const pages = [
+  { href: "/comprendre-les-tms", label: "Comprendre" },
+  { href: "/fiches-de-poste", label: "Fiches de poste" },
+  { href: "/bonnes-pratiques", label: "Bonnes pratiques" },
+  { href: "/auto-evaluation", label: "Auto-évaluation" },
+  { href: "/ressources", label: "Ressources" },
+  { href: "/duerp", label: "DUERP" },
+  { href: "/signalement", label: "Signalement" },
+];
+
+export function Nav() {
+  const pathname = usePathname();
+  const [open, setOpen] = useState(false);
+
+  return (
+    <header className="sticky top-0 z-50 px-3 pt-3 sm:px-4 sm:pt-4">
+      <div className="mx-auto max-w-7xl">
+        <div className="flex items-center justify-between gap-2 rounded-full bg-card/85 py-2 pl-4 pr-2 backdrop-blur-md shadow-[0_6px_22px_-14px_rgba(200,150,46,0.12)] border border-border">
+          {/* Logo */}
+          <Link href="/" className="shrink-0 flex items-center" aria-label="Black Sun Villetaneuse — Accueil">
+            <Image
+              src="/images/logo.png"
+              alt="Black Sun Villetaneuse"
+              width={3331}
+              height={2816}
+              className="h-8 w-auto sm:h-10"
+              priority
+            />
+          </Link>
+
+          {/* Desktop nav */}
+          <nav aria-label="Navigation principale" className="hidden xl:block">
+            <ul className="flex items-center gap-0.5">
+              <li>
+                <Link
+                  href="/"
+                  className={`block rounded-full px-3.5 py-2 text-[13px] font-medium transition-colors ${pathname === "/" ? "bg-brand text-paper" : "text-ink-soft hover:bg-brand-mist hover:text-ink"}`}
+                >
+                  Accueil
+                </Link>
+              </li>
+              {pages.map((p) => {
+                const active = pathname === p.href;
+                return (
+                  <li key={p.href}>
+                    <Link
+                      href={p.href}
+                      className={`block rounded-full px-3.5 py-2 text-[13px] font-medium transition-colors ${active ? "bg-brand text-paper" : "text-ink-soft hover:bg-brand-mist hover:text-ink"}`}
+                    >
+                      {p.label}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </nav>
+
+          {/* CTA + Mobile toggle */}
+          <div className="flex items-center gap-2">
+            <Link
+              href="/auto-evaluation"
+              className="hidden items-center gap-2 rounded-full bg-ink px-4 py-2.5 text-[13px] font-semibold text-paper transition-transform hover:-translate-y-0.5 sm:inline-flex xl:hidden 2xl:inline-flex"
+            >
+              <ClipboardCheck className="h-3.5 w-3.5" />
+              Évaluer
+            </Link>
+            <button
+              type="button"
+              aria-expanded={open}
+              aria-controls="menu-mobile"
+              onClick={() => setOpen(!open)}
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-brand-soft text-brand transition-colors hover:bg-brand-mist xl:hidden"
+            >
+              <span className="sr-only">{open ? "Fermer" : "Menu"}</span>
+              {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile menu */}
+      {open && (
+        <div id="menu-mobile" className="mx-auto max-w-7xl px-3 pt-2 xl:hidden">
+          <div className="rounded-2xl bg-card/95 backdrop-blur-md border border-border p-4 shadow-lg">
+            <nav>
+              <ul className="grid gap-1">
+                <li><Link href="/" onClick={() => setOpen(false)} className={`block rounded-xl px-4 py-2.5 text-sm font-medium ${pathname === "/" ? "bg-brand text-paper" : "text-ink-soft hover:bg-brand-mist hover:text-ink"}`}>Accueil</Link></li>
+                {pages.map((p) => (
+                  <li key={p.href}>
+                    <Link href={p.href} onClick={() => setOpen(false)} className={`block rounded-xl px-4 py-2.5 text-sm font-medium ${pathname === p.href ? "bg-brand text-paper" : "text-ink-soft hover:bg-brand-mist hover:text-ink"}`}>{p.label}</Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </div>
+        </div>
+      )}
+    </header>
+  );
+}
