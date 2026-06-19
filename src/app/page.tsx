@@ -44,7 +44,7 @@ export default function HomePage() {
             <HeroReveal>
               <span className="bs-chip mb-5"><Sparkles className="h-3 w-3" />Espace prévention TMS</span>
               <h1 className="bs-display-hero text-ink mb-6">Votre santé,<br /><span className="text-brand">votre métier</span></h1>
-              <p className="max-w-lg text-lg leading-relaxed text-ink-soft mb-8">Onglerie, bronzage, accueil : les métiers de l&apos;esthétique sollicitent intensément le corps. Protégez vos gestes, écoutez les signaux, gardez les bons réflexes.</p>
+              <p className="max-w-lg text-lg leading-relaxed text-ink-soft mb-8">Onglerie, bronzage, accueil : les métiers de l'esthétique sollicitent intensément le corps. Protégez vos gestes, écoutez les signaux, gardez les bons réflexes.</p>
               <div className="flex flex-wrap items-center gap-3">
                 <Link href="/auto-evaluation" className="bs-btn bs-btn-primary group"><ClipboardCheck className="h-4 w-4" />Évaluer mon exposition<ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" /></Link>
                 <Link href="/bonnes-pratiques" className="bs-btn bs-btn-ghost"><Shield className="h-4 w-4" />Voir les protocoles</Link>
@@ -86,7 +86,7 @@ export default function HomePage() {
           <FadeInLeft>
             <Quote className="h-16 w-16 text-brand/15 mb-6" aria-hidden="true" />
             <blockquote>
-              <p className="font-display text-2xl font-semibold leading-snug text-ink md:text-3xl">« Dans un centre de bronzage et d&apos;onglerie, notre santé est notre premier outil de travail. J&apos;ai créé cet espace pour que chacune garde les bons réflexes, prévienne les douleurs et s&apos;épanouisse dans son métier. »</p>
+              <p className="font-display text-2xl font-semibold leading-snug text-ink md:text-3xl">« Dans un centre de bronzage et d'onglerie, notre santé est notre premier outil de travail. J'ai créé cet espace pour que chacune garde les bons réflexes, prévienne les douleurs et s'épanouisse dans son métier. »</p>
               <footer className="mt-6">
                 <div className="flex items-center gap-3">
                   <Image src="/images/logo.png" alt="Black Sun Villetaneuse" width={48} height={48} className="rounded-full border border-border" />
@@ -96,7 +96,7 @@ export default function HomePage() {
             </blockquote>
           </FadeInLeft>
           <FadeInRight>
-            <p className="text-lg leading-relaxed text-ink-soft">Vous trouverez dans cet espace des repères concrets, une routine d&apos;échauffement quotidienne et toutes les bonnes pratiques pour vous protéger. Quelques minutes suffisent pour prendre soin de soi — c&apos;est ce qui permet de tenir la distance.</p>
+            <p className="text-lg leading-relaxed text-ink-soft">Vous trouverez dans cet espace des repères concrets, une routine d'échauffement quotidienne et toutes les bonnes pratiques pour vous protéger. Quelques minutes suffisent pour prendre soin de soi — c'est ce qui permet de tenir la distance.</p>
             <Link href="/comprendre-les-tms" className="bs-btn bs-btn-outline mt-6 inline-flex items-center gap-2">Découvrir les TMS<ArrowRight className="h-4 w-4" /></Link>
           </FadeInRight>
         </div>
@@ -107,17 +107,17 @@ export default function HomePage() {
         <FadeIn className="max-w-2xl mb-12">
           <p className="bs-eyebrow">Notre approche</p>
           <h2 className="bs-display-section text-ink">Un métier exigeant, une démarche structurée</h2>
-          <p className="mt-4 text-base leading-relaxed text-ink-soft">Chez <strong className="font-semibold text-ink">Black Sun Villetaneuse</strong>, la prévention TMS n&apos;est pas une option — c&apos;est le socle de la qualité de vie au travail. Voici comment nous protégeons nos équipes, chaque jour.</p>
+          <p className="mt-4 text-base leading-relaxed text-ink-soft">Chez <strong className="font-semibold text-ink">Black Sun Villetaneuse</strong>, la prévention TMS n'est pas une option — c'est le socle de la qualité de vie au travail. Voici comment nous protégeons nos équipes, chaque jour.</p>
         </FadeIn>
         <div className="bs-bento-3">
           <StaggerContainer className="bs-card-tint p-8 flex flex-col justify-between">
-            <StaggerItem><span className="bs-chip mb-4">Étape par étape</span><h3 className="font-display text-2xl font-bold text-ink mb-3">5 piliers pour prévenir les TMS</h3><p className="text-sm leading-relaxed text-ink-soft">De l&apos;observation des gestes à risque jusqu&apos;à l&apos;amélioration continue, chaque pilier renforce la protection de nos équipes.</p></StaggerItem>
+            <StaggerItem><span className="bs-chip mb-4">Étape par étape</span><h3 className="font-display text-2xl font-bold text-ink mb-3">5 piliers pour prévenir les TMS</h3><p className="text-sm leading-relaxed text-ink-soft">De l'observation des gestes à risque jusqu'à l'amélioration continue, chaque pilier renforce la protection de nos équipes.</p></StaggerItem>
             <StaggerItem className="mt-6">{demarche.slice(0,2).map((d)=>(<div key={d.num} className="flex items-start gap-3 py-3 border-b border-border last:border-0"><span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-soft text-brand font-display text-sm font-bold">{d.num}</span><div><p className="font-display font-semibold text-ink text-sm">{d.title}</p><p className="text-xs text-ink-soft mt-0.5">{d.desc}</p></div></div>))}</StaggerItem>
           </StaggerContainer>
           <div className="flex flex-col gap-4">{demarche.slice(2,4).map((d)=>(<HoverLift key={d.num} className="bs-card p-6 flex-1"><div className="flex items-center gap-3 mb-3"><span className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-soft"><d.icon className="h-5 w-5 text-brand" /></span><span className="bs-chip">{d.num}</span></div><h3 className="font-display font-semibold text-ink">{d.title}</h3><p className="text-sm text-ink-soft mt-1.5">{d.desc}</p></HoverLift>))}</div>
-          <HoverGlow className="bs-card-ink p-6 flex flex-col justify-between"><div><p className="bs-eyebrow !text-ink/50">Prête à agir ?</p><p className="font-display text-xl font-bold mt-3">5 minutes pour évaluer votre exposition.</p></div><Link href="/auto-evaluation" className="mt-6 inline-flex items-center gap-2 self-start rounded-full bg-paper px-5 py-3 text-sm font-semibold text-brand transition-transform hover:-translate-y-0.5">Lancer l&apos;auto-évaluation<ArrowRight className="h-4 w-4" /></Link></HoverGlow>
+          <HoverGlow className="bs-card-ink p-6 flex flex-col justify-between"><div><p className="bs-eyebrow !text-ink/50">Prête à agir ?</p><p className="font-display text-xl font-bold mt-3">5 minutes pour évaluer votre exposition.</p></div><Link href="/auto-evaluation" className="mt-6 inline-flex items-center gap-2 self-start rounded-full bg-paper px-5 py-3 text-sm font-semibold text-brand transition-transform hover:-translate-y-0.5">Lancer l'auto-évaluation<ArrowRight className="h-4 w-4" /></Link></HoverGlow>
         </div>
-        <FadeIn delay={0.2} className="mt-4"><div className="bs-card p-6 flex flex-col sm:flex-row sm:items-center gap-4"><div className="flex items-center gap-3"><span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-soft"><demarche[4].icon className="h-5 w-5 text-brand" /></span><span className="bs-chip">{demarche[4].num}</span></div><div className="flex-1"><h3 className="font-display font-semibold text-ink">{demarche[4].title}</h3><p className="text-sm text-ink-soft mt-0.5">{demarche[4].desc}</p></div><Link href="/auto-evaluation" className="bs-btn bs-btn-primary shrink-0">Commencer<ArrowRight className="h-4 w-4" /></Link></div></FadeIn>
+        <FadeIn delay={0.2} className="mt-4"><div className="bs-card p-6 flex flex-col sm:flex-row sm:items-center gap-4"><div className="flex items-center gap-3"><span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-soft"><TrendingUp className="h-5 w-5 text-brand" /></span><span className="bs-chip">{demarche[4].num}</span></div><div className="flex-1"><h3 className="font-display font-semibold text-ink">{demarche[4].title}</h3><p className="text-sm text-ink-soft mt-0.5">{demarche[4].desc}</p></div><Link href="/auto-evaluation" className="bs-btn bs-btn-primary shrink-0">Commencer<ArrowRight className="h-4 w-4" /></Link></div></FadeIn>
       </section>
 
       {/* ═══ EXPLORER ═══ */}
