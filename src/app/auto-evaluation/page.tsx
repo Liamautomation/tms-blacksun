@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
 import { ChevronRight, RotateCcw, Info } from "lucide-react";
 
 const questions = [
@@ -33,29 +32,26 @@ export default function AutoEvaluationPage() {
   const repondues = reponses.filter((r) => r !== null).length;
   const oui = reponses.filter((r) => r === true).length;
 
-  if (soumis) {
-    return (
-      <div className="mx-auto max-w-xl px-4 py-28 text-center">
-        <div className="w-20 h-20 rounded-3xl bg-gold/10 flex items-center justify-center mx-auto mb-8"><Info className="h-10 w-10 text-gold" /></div>
-        <h1 className="font-display text-3xl font-bold text-cream mb-3">Votre résultat</h1>
-        <p className="text-cream-muted/60 mb-8">Auto-évaluation TMS</p>
-        <div className="text-7xl font-display font-extrabold text-gold mb-2">{oui}<span className="text-2xl text-cream-muted/30">/{questions.length}</span></div>
-        <p className="text-cream-muted/60 text-sm max-w-sm mx-auto mt-4">{oui===0?"Aucun signal détecté. Continuez à appliquer les bonnes pratiques !":oui<=3?"Quelques signaux faibles. Restez vigilant et appliquez les protocoles.":oui<=7?"Plusieurs signaux détectés. Consultez les fiches de poste et adoptez les gestes recommandés.":"De nombreux signaux. Parlez-en à votre responsable et consultez un professionnel de santé."}</p>
-        <div className="mt-8 p-5 bg-warm/5 border border-warm/10 rounded-xl text-left max-w-md mx-auto"><p className="text-sm text-cream-muted/60"><strong className="text-warm">Rappel :</strong> ce test ne remplace pas un avis médical.</p></div>
-        <Button variant="outline" className="mt-8" onClick={()=>{setReponses(Array(questions.length).fill(null));setSoumis(false)}}><RotateCcw className="h-4 w-4" /> Recommencer</Button>
-      </div>
-    );
-  }
+  if (soumis) return (
+    <div className="mx-auto max-w-xl px-4 py-20 text-center">
+      <div className="flex h-20 w-20 items-center justify-center rounded-3xl bg-brand-soft mx-auto mb-8"><Info className="h-10 w-10 text-brand" /></div>
+      <h1 className="font-display text-3xl font-bold text-ink mb-3">Votre résultat</h1>
+      <div className="text-7xl font-display font-extrabold text-brand mb-2">{oui}<span className="text-2xl text-ink-muted">/{questions.length}</span></div>
+      <p className="text-ink-soft text-sm max-w-sm mx-auto mt-4">{oui===0?"Aucun signal. Continuez à appliquer les bonnes pratiques !":oui<=3?"Quelques signaux faibles. Restez vigilante.":oui<=7?"Plusieurs signaux. Consultez les fiches de poste.":"De nombreux signaux. Parlez-en à votre responsable."}</p>
+      <div className="mt-8 p-5 bg-brand-soft border border-brand/10 rounded-2xl text-left max-w-md mx-auto"><p className="text-sm text-ink-soft"><strong className="text-brand font-semibold">Rappel :</strong> ce test ne remplace pas un avis médical.</p></div>
+      <button onClick={()=>{setReponses(Array(questions.length).fill(null));setSoumis(false)}} className="rl-btn rl-btn-ghost mt-8"><RotateCcw className="h-4 w-4" /> Recommencer</button>
+    </div>
+  );
 
   return (
-    <div className="mx-auto max-w-2xl px-4 py-20 lg:py-28">
-      <p className="text-gold/60 text-xs font-medium uppercase tracking-[0.15em] mb-3">Test personnel</p>
-      <h1 className="font-display text-4xl lg:text-5xl font-bold text-cream mb-4">Auto-évaluation TMS</h1>
-      <p className="text-cream-muted/60 text-lg mb-8">20 questions pour évaluer votre exposition. Répondez honnêtement : ce test est anonyme.</p>
-      <div className="mb-4 flex items-center gap-2"><div className="flex-1 h-1.5 rounded-full bg-black-border-light overflow-hidden"><div className="h-full bg-gold rounded-full transition-all duration-500" style={{width:`${(repondues/questions.length)*100}%`}} /></div><span className="text-xs text-cream-muted/40 shrink-0">{repondues}/{questions.length}</span></div>
+    <div className="mx-auto max-w-2xl px-4 py-14 sm:px-6 md:py-20">
+      <p className="rl-eyebrow">Test personnel</p>
+      <h1 className="mt-3 font-display text-4xl font-bold leading-tight text-ink md:text-5xl">Auto-évaluation TMS</h1>
+      <p className="mt-4 text-lg text-ink-soft mb-10">20 questions pour évaluer votre exposition. Répondez honnêtement : ce test est anonyme.</p>
+      <div className="mb-6 flex items-center gap-2"><div className="flex-1 h-1.5 rounded-full bg-border overflow-hidden"><div className="h-full bg-brand rounded-full transition-all duration-500" style={{width:`${(repondues/questions.length)*100}%`}} /></div><span className="text-xs text-ink-muted shrink-0">{repondues}/{questions.length}</span></div>
       <form onSubmit={(e)=>{e.preventDefault();setSoumis(true)}}>
-        <div className="space-y-4">{questions.map((q,i)=>(<div key={i} className="bg-black-card border border-black-border-light rounded-xl p-5"><p className="text-cream/90 text-sm mb-3"><span className="text-gold/60 font-display font-bold mr-2 text-xs">{i+1}.</span>{q}</p><div className="flex gap-3">{[{value:true,label:"Oui",active:"bg-warm text-white border-warm",inactive:"border-black-border-light text-cream-muted/40 hover:border-warm/30"},{value:false,label:"Non",active:"bg-gold/70 text-black-sun border-gold",inactive:"border-black-border-light text-cream-muted/40 hover:border-gold/30"}].map((opt)=><button key={String(opt.value)} type="button" className={`flex-1 py-2 rounded-lg text-sm font-medium border transition-all ${reponses[i]===opt.value?opt.active:opt.inactive}`} onClick={()=>{const r=[...reponses];r[i]=opt.value;setReponses(r)}}>{opt.label}</button>)}</div></div>))}</div>
-        <div className="mt-10 text-center"><Button type="submit" disabled={repondues<questions.length} size="lg" className="px-10">Voir mon résultat <ChevronRight className="h-4 w-4" /></Button></div>
+        <div className="space-y-4">{questions.map((q,i)=>(<div key={i} className="rl-card p-5"><p className="text-ink text-sm mb-3"><span className="text-brand font-display font-bold mr-2 text-xs">{i+1}.</span>{q}</p><div className="flex gap-3">{[{value:true,label:"Oui",active:"bg-warm text-paper border-warm",inactive:"border-border text-ink-muted hover:border-warm/30 hover:text-ink-soft"},{value:false,label:"Non",active:"bg-brand text-paper border-brand",inactive:"border-border text-ink-muted hover:border-brand/30 hover:text-ink-soft"}].map((opt)=>(<button key={String(opt.value)} type="button" className={`flex-1 py-2 rounded-full text-sm font-medium border transition-all ${reponses[i]===opt.value?opt.active:opt.inactive}`} onClick={()=>{const r=[...reponses];r[i]=opt.value;setReponses(r)}}>{opt.label}</button>))}</div></div>))}</div>
+        <div className="mt-10 text-center"><button type="submit" disabled={repondues<questions.length} className="rl-btn rl-btn-primary disabled:opacity-40 disabled:pointer-events-none">Voir mon résultat <ChevronRight className="h-4 w-4" /></button></div>
       </form>
     </div>
   );
