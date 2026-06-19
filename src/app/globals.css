@@ -9,7 +9,7 @@
   --color-card-tint: #12100e;
   --color-card-raised: #161616;
   --color-border: rgba(200, 150, 46, 0.1);
-  --color-border-soft: rgba(200, 150, 46, 0.05);
+  --color-border-light: rgba(200, 150, 46, 0.05);
   --color-brand: #C8962E;
   --color-brand-light: #DDB158;
   --color-brand-deep: #A0761E;
@@ -31,43 +31,56 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* ═══ SIGNATURE — SOLAR ECLIPSE ARC ═══ */
+/* ═══ RL COMPAT (legacy pages) ═══ */
+.rl-card { background: var(--color-card); border: 1px solid var(--color-border); border-radius: var(--radius-card); transition: border-color 0.3s ease; }
+.rl-card:hover { border-color: rgba(200,150,46,0.2); }
+.rl-card-tint { background: var(--color-card-tint); border: 1px solid var(--color-border); border-radius: 2rem; }
+.rl-card-ink { background: linear-gradient(135deg, #C8962E 0%, #A0761E 100%); border-radius: var(--radius-card); }
+.rl-lift { transition: transform 0.25s ease, box-shadow 0.25s ease; }
+.rl-lift:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(200,150,46,0.08); }
+.rl-eyebrow { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-brand); }
+.rl-chip { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.25rem 0.75rem; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--color-brand); background: var(--color-brand-soft); border-radius: 9999px; }
+.rl-btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.625rem 1.25rem; font-size: 0.8125rem; font-weight: 600; border-radius: var(--radius-btn); transition: all 0.2s ease; }
+.rl-btn-primary { background: var(--color-brand); color: #080808; }
+.rl-btn-primary:hover { background: var(--color-brand-light); transform: translateY(-1px); }
+.rl-btn-ghost { color: var(--color-ink-soft); border: 1px solid var(--color-border); background: transparent; }
+.rl-btn-ghost:hover { border-color: var(--color-brand); color: var(--color-ink); }
+.rl-route { background: linear-gradient(to bottom, var(--color-brand), transparent); border-radius: 2px; }
+.rl-mark { background: linear-gradient(to right, rgba(200,150,46,0.2), transparent); padding: 0 0.1em; }
+.rl-in { animation: rlFadeUp 0.6s ease both; }
+.rl-in-1 { animation-delay: 0.1s; } .rl-in-2 { animation-delay: 0.2s; } .rl-in-3 { animation-delay: 0.3s; }
+@keyframes rlFadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+
+/* ═══ BS — SIGNATURE SOLAR ARC ═══ */
 .bs-arc { position: relative; }
 .bs-arc::after { content: ""; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 120px; height: 3px; background: linear-gradient(90deg, transparent, var(--color-brand), transparent); border-radius: 2px; }
 .bs-arc-section { position: relative; }
 .bs-arc-section::before { content: ""; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 200px; height: 2px; background: linear-gradient(90deg, transparent 20%, rgba(200,150,46,0.3) 50%, transparent 80%); }
 .bs-solar-glow { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 800px; height: 600px; background: radial-gradient(ellipse 50% 40% at 50% 40%, rgba(200,150,46,0.12) 0%, transparent 70%); pointer-events: none; }
 
-/* ═══ EDITORIAL TYPOGRAPHY ═══ */
+/* ═══ BS — EDITORIAL TYPO ═══ */
 .bs-display { font-family: var(--font-display); font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; }
 .bs-display-hero { font-family: var(--font-display); font-weight: 800; line-height: 1.05; letter-spacing: -0.03em; font-size: clamp(3rem, 6vw, 5.5rem); }
 .bs-display-section { font-family: var(--font-display); font-weight: 700; line-height: 1.15; letter-spacing: -0.02em; font-size: clamp(1.8rem, 3.5vw, 3rem); }
 .bs-eyebrow { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-brand); margin-bottom: 0.75rem; }
 
-/* ═══ CARDS (variées) ═══ */
-.bs-card { background: var(--color-card); border: 1px solid var(--color-border); border-radius: var(--radius-card); transition: border-color 0.3s ease, box-shadow 0.3s ease; }
+/* ═══ BS — CARDS ═══ */
+.bs-card { background: var(--color-card); border: 1px solid var(--color-border); border-radius: var(--radius-card); transition: border-color 0.3s ease; }
 .bs-card:hover { border-color: rgba(200,150,46,0.2); }
 .bs-card-lift { background: var(--color-card); border: 1px solid var(--color-border); border-radius: var(--radius-card); transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
 .bs-card-lift:hover { transform: translateY(-4px); border-color: rgba(200,150,46,0.3); box-shadow: 0 8px 40px rgba(200,150,46,0.06), 0 2px 8px rgba(0,0,0,0.3); }
-.bs-card-glow { background: var(--color-card); border: 1px solid var(--color-border); border-radius: var(--radius-card); transition: all 0.4s ease; }
-.bs-card-glow:hover { border-color: rgba(200,150,46,0.4); box-shadow: 0 0 40px rgba(200,150,46,0.06), inset 0 0 40px rgba(200,150,46,0.02); }
 .bs-card-tint { background: var(--color-card-tint); border: 1px solid var(--color-border); border-radius: 1.5rem; }
 .bs-card-ink { background: linear-gradient(135deg, #C8962E 0%, #A0761E 100%); border-radius: var(--radius-card); }
 .bs-card-ink p, .bs-card-ink span, .bs-card-ink h2, .bs-card-ink h3 { color: #080808; }
 
-/* ═══ BENTO & ASYMMETRIC ═══ */
-.bs-bento { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
-@media (max-width: 768px) { .bs-bento { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 480px) { .bs-bento { grid-template-columns: 1fr; } }
+/* ═══ BS — BENTO ═══ */
 .bs-bento-3 { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 1rem; }
 @media (max-width: 768px) { .bs-bento-3 { grid-template-columns: 1fr; } }
 .bs-asymmetric { display: grid; grid-template-columns: 5fr 4fr; gap: 3rem; align-items: center; }
 @media (max-width: 768px) { .bs-asymmetric { grid-template-columns: 1fr; } }
 
-/* ═══ CHIPS ═══ */
+/* ═══ BS — CHIPS & BUTTONS ═══ */
 .bs-chip { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.25rem 0.75rem; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-brand); background: var(--color-brand-soft); border: 1px solid var(--color-border); border-radius: 9999px; }
-
-/* ═══ BUTTONS ═══ */
 .bs-btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.7rem 1.5rem; font-size: 0.85rem; font-weight: 600; border-radius: var(--radius-btn); transition: all 0.25s ease; text-decoration: none; }
 .bs-btn-primary { background: var(--color-brand); color: #080808; }
 .bs-btn-primary:hover { background: var(--color-brand-light); transform: translateY(-1px); box-shadow: 0 4px 20px rgba(200,150,46,0.3); }
@@ -76,7 +89,7 @@ body {
 .bs-btn-outline { color: var(--color-brand); border: 1px solid rgba(200,150,46,0.3); background: transparent; }
 .bs-btn-outline:hover { background: var(--color-brand-soft); border-color: var(--color-brand); }
 
-/* ═══ ANIMATIONS ═══ */
+/* ═══ BS — ANIMATIONS ═══ */
 .bs-in { animation: bsFadeUp 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
 .bs-in-1 { animation-delay: 0.08s; } .bs-in-2 { animation-delay: 0.16s; } .bs-in-3 { animation-delay: 0.24s; }
 .bs-in-4 { animation-delay: 0.32s; } .bs-in-5 { animation-delay: 0.4s; } .bs-in-6 { animation-delay: 0.48s; }
