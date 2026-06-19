@@ -2,24 +2,39 @@
 
 @theme inline {
   --color-black-sun: #0a0a0a;
-  --color-black-card: #141414;
-  --color-black-border: #262626;
+  --color-black-card: #111111;
+  --color-black-card-alt: #161616;
+  --color-black-border: #1f1f1f;
+  --color-black-border-light: #2a2a2a;
   --color-gold: #C8962E;
   --color-gold-light: #D4A843;
   --color-gold-pale: #F5E6C8;
+  --color-gold-subtle: rgba(200, 150, 46, 0.08);
   --color-warm: #E8913A;
+  --color-warm-glow: rgba(232, 145, 58, 0.12);
   --color-cream: #FDFBF7;
-  --color-cream-muted: #F5F0E8;
+  --color-cream-muted: #E8E4DC;
+  --color-cream-soft: rgba(253, 251, 247, 0.06);
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --font-display: "Syne", sans-serif;
+  --font-body: "Inter", sans-serif;
 }
 
 body {
   background-color: var(--color-black-sun);
-  color: var(--color-cream);
-  font-family: var(--font-sans);
+  color: var(--color-cream-muted);
+  font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-::selection {
-  background-color: var(--color-gold);
-  color: var(--color-black-sun);
-}
+::selection { background-color: rgba(200, 150, 46, 0.3); color: var(--color-cream); }
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-black-sun); }
+::-webkit-scrollbar-thumb { background: var(--color-black-border-light); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-gold); }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
