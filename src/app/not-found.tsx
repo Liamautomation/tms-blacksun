@@ -6,7 +6,7 @@ export default function NotFound() {
       <p className="font-display text-8xl font-extrabold text-brand/20 mb-4">404</p>
       <h1 className="font-display text-2xl font-bold text-ink mb-3">Page introuvable</h1>
       <p className="text-ink-soft text-sm mb-8">La page que vous cherchez n&apos;existe pas.</p>
-      <Link href="/" className="rl-btn rl-btn-primary">Retour à l&apos;accueil</Link>
+      <Link href="/" className="bs-btn bs-btn-primary">Retour à l&apos;accueil</Link>
     </div>
   );
 }

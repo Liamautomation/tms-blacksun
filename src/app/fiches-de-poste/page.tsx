@@ -1,5 +1,6 @@
 import { Shield, CheckCircle, Wrench, AlertTriangle } from "lucide-react";
 import Image from "next/image";
+import { FadeIn, StaggerContainer, StaggerItem, HoverLift } from "@/components/Animated";
 
 const fiches = [
   { titre: "Esthéticienne — Soin et Onglerie", risques: ["Douleurs cervicales et tensions aux épaules","Syndrome du canal carpien","Lombalgies","Tendinites des poignets"], gestes: ["Régler la hauteur du fauteuil","Garder le dos droit","Maintenir les coudes près du corps","Alterner l'appui","Organiser le plan de travail"], equipements: ["Siège ergonomique réglable","Outils ergonomiques","Éclairage optimal","Repose-pieds"], alertes: ["Douleur aux poignets","Fourmillements","Difficulté à saisir","Raideur au réveil"] },
@@ -16,8 +17,61 @@ const blocs = [
 export default function FichesPostePage() {
   return (
     <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 md:py-20">
-      <div className="max-w-3xl mb-14"><p className="rl-eyebrow">Par poste de travail</p><h1 className="mt-3 font-display text-4xl font-bold leading-tight tracking-tight text-ink md:text-5xl">Fiches de poste</h1><p className="mt-4 text-lg text-ink-soft">Risques, gestes recommandés, équipements et signaux d&apos;alerte</p></div>
-      <div className="space-y-14">{fiches.map((fiche,i)=><section key={fiche.titre}><div className="flex items-center gap-4 mb-8"><div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-soft text-brand font-display font-bold text-xl">{i+1}</div><h2 className="font-display text-2xl font-bold text-ink md:text-3xl">{fiche.titre}</h2></div><div className="grid lg:grid-cols-2 gap-6"><div className="relative aspect-video rounded-2xl overflow-hidden bg-gradient-to-br from-card to-card-tint border border-border flex items-center justify-center"><Image src="/images/photo_poste.jpg" alt={fiche.titre} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" /></div><div className="space-y-3">{blocs.map((bloc)=><div key={bloc.key} className={`${bloc.bg} ${bloc.border} border rounded-2xl p-5`}><div className="flex items-center gap-2 mb-2.5"><bloc.icon className={`h-4 w-4 ${bloc.color}`} /><h3 className={`text-xs font-semibold uppercase tracking-wider ${bloc.color}`}>{bloc.label}</h3></div><ul className="space-y-1.5">{fiche[bloc.key].map((item)=><li key={item} className="flex items-start gap-2 text-sm text-ink-soft"><span className={`${bloc.color} mt-0.5 shrink-0`}>·</span>{item}</li>)}</ul></div>)}</div></div></section>)}</div>
+      {/* ═══ HERO ═══ */}
+      <FadeIn className="max-w-3xl mb-14">
+        <p className="bs-eyebrow">Par poste de travail</p>
+        <h1 className="bs-display-section text-ink">Fiches de poste</h1>
+        <p className="mt-4 text-lg text-ink-soft">Risques, gestes recommandés, équipements et signaux d&apos;alerte — pour chaque métier du salon.</p>
+      </FadeIn>
+
+      {/* ═══ FICHES — LAYOUT ALTERNÉ ═══ */}
+      <div className="space-y-20">
+        {fiches.map((fiche, i) => (
+          <FadeIn key={fiche.titre} delay={i * 0.1}>
+            <section className="bs-arc-section pt-10">
+              {/* En-tête fiche */}
+              <div className="flex items-center gap-4 mb-8">
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-soft text-brand font-display font-bold text-xl border border-brand/10">{i + 1}</div>
+                <h2 className="font-display text-2xl font-bold text-ink md:text-3xl">{fiche.titre}</h2>
+              </div>
+
+              {/* Layout alterné : image à gauche pour fiche 1, à droite pour fiche 2 */}
+              <div className={`grid lg:grid-cols-2 gap-6 items-start ${i % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""}`}>
+                {/* Image */}
+                <div className="relative aspect-video rounded-2xl overflow-hidden border border-border shadow-lg group">
+                  <Image src="/images/photo_poste.jpg" alt={fiche.titre} fill className="object-cover transition-transform duration-500 group-hover:scale-105" sizes="(max-width: 1024px) 100vw, 50vw" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-paper/60 via-transparent to-transparent" />
+                  <div className="absolute bottom-4 left-4">
+                    <span className="bs-chip">Poste {i + 1}</span>
+                  </div>
+                </div>
+
+                {/* Blocs */}
+                <StaggerContainer className="space-y-3">
+                  {blocs.map((bloc) => (
+                    <StaggerItem key={bloc.key}>
+                      <HoverLift className={`${bloc.bg} ${bloc.border} border rounded-2xl p-5`}>
+                        <div className="flex items-center gap-2 mb-2.5">
+                          <bloc.icon className={`h-4 w-4 ${bloc.color}`} />
+                          <h3 className={`text-xs font-semibold uppercase tracking-wider ${bloc.color}`}>{bloc.label}</h3>
+                        </div>
+                        <ul className="space-y-1.5">
+                          {fiche[bloc.key].map((item) => (
+                            <li key={item} className="flex items-start gap-2 text-sm text-ink-soft">
+                              <span className={`${bloc.color} mt-0.5 shrink-0`}>·</span>
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                      </HoverLift>
+                    </StaggerItem>
+                  ))}
+                </StaggerContainer>
+              </div>
+            </section>
+          </FadeIn>
+        ))}
+      </div>
     </div>
   );
 }
