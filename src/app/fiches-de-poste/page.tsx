@@ -1,60 +1,38 @@
 import { Metadata } from "next";
-import Image from "next/image";
+import { Shield, CheckCircle, Wrench, AlertTriangle } from "lucide-react";
+import { PlaceholderImage } from "@/components/PlaceholderImage";
 
-export const metadata: Metadata = {
-  title: "Fiches de poste — Black Sun Villetaneuse",
-  description: "Fiches de poste détaillées : esthéticienne (onglerie et soin) et hôtesse de caisse / accueil. Risques, gestes recommandés et équipements.",
-};
+export const metadata: Metadata = { title: "Fiches de poste — Black Sun Villetaneuse", description: "Fiches de poste : esthéticienne et hôtesse de caisse. Risques, gestes recommandés et équipements." };
 
 const fiches = [
-  {
-    titre: "Esthéticienne — Soin et Onglerie",
-    image: "/images/photo_poste.jpg",
-    risques: ["Douleurs cervicales et tensions aux épaules","Syndrome du canal carpien (gestes répétitifs)","Lombalgies (posture assise prolongée)","Tendinites des poignets"],
-    gestes: ["Régler la hauteur du fauteuil","Garder le dos droit","Maintenir les coudes près du corps","Alterner l'appui sur les pieds","Organiser le plan de travail"],
-    equipements: ["Siège ergonomique réglable","Outils ergonomiques","Éclairage optimal","Repose-pieds"],
-    alertes: ["Douleur aux poignets","Fourmillements","Difficulté à saisir","Raideur au réveil"],
-  },
-  {
-    titre: "Hôtesse de Caisse et Accueil",
-    image: "/images/photo_poste.jpg",
-    risques: ["Fatigue veineuse","Tensions lombaires","Douleurs des poignets","Tensions cervicales"],
-    gestes: ["Ajuster l'écran à hauteur des yeux","Utiliser un repose-pied","Alterner assis-debout","Manches télescopiques pour nettoyage"],
-    equipements: ["Siège ergonomique","Écran ajusté","Repose-pieds","Manches télescopiques"],
-    alertes: ["Lourdeur dans les jambes","Douleurs bas du dos","Fourmillements","Raideur nuque"],
-  },
+  { titre: "Esthéticienne — Soin et Onglerie", risques: ["Douleurs cervicales et tensions aux épaules","Syndrome du canal carpien","Lombalgies","Tendinites des poignets"], gestes: ["Régler la hauteur du fauteuil","Garder le dos droit","Maintenir les coudes près du corps","Alterner l'appui sur les pieds","Organiser le plan de travail"], equipements: ["Siège ergonomique réglable","Outils ergonomiques","Éclairage optimal","Repose-pieds"], alertes: ["Douleur persistante aux poignets","Fourmillements dans les doigts","Difficulté à saisir les outils","Raideur au réveil"] },
+  { titre: "Hôtesse de Caisse et Accueil", risques: ["Fatigue veineuse","Tensions lombaires","Douleurs des poignets","Tensions cervicales"], gestes: ["Écran à hauteur des yeux","Repose-pied si nécessaire","Alternance assis-debout","Manches télescopiques","Pivoter avec les pieds"], equipements: ["Siège ergonomique","Écran ajusté","Repose-pieds","Manches télescopiques"], alertes: ["Lourdeur dans les jambes","Douleurs bas du dos","Fourmillements","Raideur nuque"] },
+];
+
+const blocs = [
+  { key: "risques" as const, icon: AlertTriangle, label: "Risques identifiés", color: "text-warm", bg: "bg-warm/5", border: "border-warm/10" },
+  { key: "gestes" as const, icon: CheckCircle, label: "Gestes recommandés", color: "text-gold", bg: "bg-gold/5", border: "border-gold/10" },
+  { key: "equipements" as const, icon: Wrench, label: "Équipements", color: "text-cream", bg: "bg-cream-soft", border: "border-cream-muted/5" },
+  { key: "alertes" as const, icon: Shield, label: "Signaux d'alerte", color: "text-warm", bg: "bg-warm/5", border: "border-warm/10" },
 ];
 
 export default function FichesPostePage() {
   return (
-    <div className="mx-auto max-w-4xl px-4 py-16 lg:py-24">
-      <h1 className="text-3xl lg:text-4xl font-bold text-gold mb-2">Fiches de poste</h1>
-      <p className="text-cream-muted/70 mb-12">Risques, gestes recommandés, équipements et signaux d&apos;alerte par poste</p>
-      <div className="space-y-12">
+    <div className="mx-auto max-w-5xl px-4 py-20 lg:py-28">
+      <p className="text-gold/60 text-xs font-medium uppercase tracking-[0.15em] mb-3">Par poste de travail</p>
+      <h1 className="font-display text-4xl lg:text-5xl font-bold text-cream mb-4">Fiches de poste</h1>
+      <p className="text-cream-muted/60 text-lg mb-16">Risques, gestes recommandés, équipements et signaux d&apos;alerte</p>
+      <div className="space-y-16">
         {fiches.map((fiche, i) => (
-          <section key={fiche.titre} className="bg-black-card border border-black-border rounded-2xl overflow-hidden">
-            <div className="p-6 lg:p-8 border-b border-black-border">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center text-gold font-bold text-lg">{i + 1}</div>
-                <h2 className="text-xl lg:text-2xl font-bold text-cream">{fiche.titre}</h2>
-              </div>
-            </div>
-            <div className="grid lg:grid-cols-2 gap-0">
-              <div className="relative aspect-[4/3] bg-black-sun/50 flex items-center justify-center border-b lg:border-b-0 lg:border-r border-black-border">
-                <Image src={fiche.image} alt={fiche.titre} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
-              </div>
-              <div className="p-6 lg:p-8 space-y-5">
-                {[
-                  { titre: "Risques identifiés", items: fiche.risques, color: "text-warm" },
-                  { titre: "Gestes recommandés", items: fiche.gestes, color: "text-gold" },
-                  { titre: "Équipements disponibles", items: fiche.equipements, color: "text-cream" },
-                  { titre: "Signaux d'alerte", items: fiche.alertes, color: "text-warm" },
-                ].map((bloc) => (
-                  <div key={bloc.titre}>
-                    <h3 className={`text-sm font-semibold uppercase tracking-wider mb-2 ${bloc.color}`}>{bloc.titre}</h3>
-                    <ul className="list-disc list-inside space-y-1 text-cream-muted/80 text-sm">
-                      {bloc.items.map((item) => <li key={item}>{item}</li>)}
-                    </ul>
+          <section key={fiche.titre}>
+            <div className="flex items-center gap-4 mb-8"><div className="w-14 h-14 rounded-2xl bg-gold/10 flex items-center justify-center text-gold font-display font-bold text-xl">{i+1}</div><h2 className="font-display text-2xl lg:text-3xl font-bold text-cream">{fiche.titre}</h2></div>
+            <div className="grid lg:grid-cols-2 gap-6">
+              <PlaceholderImage label="Photo du poste" aspect="video" className="lg:sticky lg:top-24" />
+              <div className="space-y-4">
+                {blocs.map((bloc) => (
+                  <div key={bloc.key} className={`${bloc.bg} ${bloc.border} border rounded-xl p-5`}>
+                    <div className="flex items-center gap-2 mb-3"><bloc.icon className={`h-4 w-4 ${bloc.color}`} /><h3 className={`text-xs font-semibold uppercase tracking-wider ${bloc.color}`}>{bloc.label}</h3></div>
+                    <ul className="space-y-1.5">{fiche[bloc.key].map((item)=><li key={item} className="flex items-start gap-2 text-sm text-cream-muted/65"><span className={`${bloc.color} mt-0.5 shrink-0`}>·</span>{item}</li>)}</ul>
                   </div>
                 ))}
               </div>

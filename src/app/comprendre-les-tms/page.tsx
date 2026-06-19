@@ -1,64 +1,25 @@
 import { Metadata } from "next";
+import { Activity, AlertTriangle, Brain, TrendingUp } from "lucide-react";
 
-export const metadata: Metadata = {
-  title: "Comprendre les TMS — Black Sun Villetaneuse",
-  description: "Définition, causes, symptômes et facteurs de risque des TMS dans le secteur de l'esthétique et du bronzage.",
-};
+export const metadata: Metadata = { title: "Comprendre les TMS — Black Sun Villetaneuse", description: "Définition, causes, symptômes et facteurs de risque des TMS dans l'esthétique et le bronzage." };
+
+const causes = [
+  { icon: Activity, title: "Gestes répétitifs", desc: "Mouvements identiques à cadence élevée : manucure, nettoyage des cabines." },
+  { icon: AlertTriangle, title: "Postures contraignantes", desc: "Maintien prolongé de positions inconfortables : buste penché, bras en élévation." },
+  { icon: TrendingUp, title: "Efforts excessifs", desc: "Manutention de charges, port de cartons, pression excessive des doigts." },
+  { icon: Brain, title: "Stress et rythme", desc: "Tension musculaire liée au stress, enchaînement des clients sans pause." },
+];
+
+const signaux = ["Douleurs persistantes dans le bas du dos, les cervicales ou les poignets","Fourmillements ou engourdissements dans les mains et les doigts","Raideurs articulaires au réveil ou après une période d'inactivité","Perte de force ou difficulté à saisir de petits objets","Lourdeur excessive dans les jambes en fin de journée"];
 
 export default function ComprendreTMSPage() {
   return (
-    <div className="mx-auto max-w-4xl px-4 py-16 lg:py-24">
-      <h1 className="text-3xl lg:text-4xl font-bold text-gold mb-2">Comprendre les TMS</h1>
-      <p className="text-cream-muted/70 mb-12">Troubles Musculo-Squelettiques : définition, causes et prévention</p>
-      <div className="space-y-12">
-        <section>
-          <h2 className="text-xl font-semibold text-cream mb-4">Qu&apos;est-ce qu&apos;un TMS ?</h2>
-          <div className="bg-black-card border border-black-border rounded-xl p-6">
-            <p className="text-cream-muted/90 leading-relaxed">Les Troubles Musculo-Squelettiques (TMS) regroupent un ensemble de pathologies affectant les muscles, tendons, nerfs, articulations et ligaments. Ils touchent principalement les membres supérieurs, le dos et les membres inférieurs. Les TMS sont la première cause de maladies professionnelles reconnues en France, représentant plus de 87 % des maladies professionnelles indemnisées (Assurance Maladie).</p>
-          </div>
-        </section>
-        <section>
-          <h2 className="text-xl font-semibold text-cream mb-4">Les causes principales</h2>
-          <div className="grid gap-4 sm:grid-cols-2">
-            {[
-              { title: "Gestes répétitifs", desc: "Mouvements identiques à cadence élevée : manucure, nettoyage des cabines." },
-              { title: "Postures contraignantes", desc: "Maintien prolongé de positions inconfortables : buste penché, bras en élévation." },
-              { title: "Efforts excessifs", desc: "Manutention de charges, port de cartons, pression excessive des doigts." },
-              { title: "Stress et rythme", desc: "Tension musculaire liée au stress, enchaînement des clients sans pause." },
-            ].map((item) => (
-              <div key={item.title} className="bg-black-card border border-black-border rounded-xl p-5">
-                <h3 className="font-semibold text-gold mb-2">{item.title}</h3>
-                <p className="text-cream-muted/80 text-sm leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-        <section>
-          <h2 className="text-xl font-semibold text-cream mb-4">Reconnaître les signaux d&apos;alerte</h2>
-          <div className="bg-black-card border border-black-border rounded-xl p-6">
-            <ul className="space-y-3 text-cream-muted/90">
-              {["Douleurs persistantes dans le bas du dos, cervicales ou poignets","Fourmillements ou engourdissements dans les mains","Raideurs articulaires au réveil","Perte de force ou difficulté à saisir de petits objets","Lourdeur excessive dans les jambes en fin de journée"].map((s, i) => (
-                <li key={i} className="flex gap-3"><span className="text-gold font-bold shrink-0">▸</span><span><strong className="text-cream">{s.split(" ")[0]}</strong> {s.split(" ").slice(1).join(" ")}</span></li>
-              ))}
-            </ul>
-            <div className="mt-6 p-4 bg-warm/10 border border-warm/20 rounded-lg">
-              <p className="text-sm text-cream-muted/80">⚠️ <strong className="text-warm">Ne jamais ignorer ces signaux.</strong> Un TMS pris en charge précocement se guérit dans la majorité des cas. Signalez toute douleur persistante à votre responsable.</p>
-            </div>
-          </div>
-        </section>
-        <section>
-          <h2 className="text-xl font-semibold text-cream mb-4">Focus : les TMS dans l&apos;esthétique et le bronzage</h2>
-          <div className="bg-black-card border border-black-border rounded-xl p-6">
-            <p className="text-cream-muted/90 leading-relaxed mb-4">Le secteur de l&apos;esthétique et des centres de bronzage présente des facteurs de risque spécifiques. Selon l&apos;INRS, les professionnels sont particulièrement exposés aux TMS du poignet, de la main et du rachis cervical.</p>
-            <div className="grid gap-3 sm:grid-cols-3 mt-4">
-              {[{pct:"60%",txt:"des esthéticiennes déclarent des douleurs aux cervicales"},{pct:"45%",txt:"souffrent de douleurs aux poignets et aux mains"},{pct:"1er",txt:"rang des TMS parmi les maladies professionnelles"}].map((s) => (
-                <div key={s.pct} className="text-center p-4 bg-black-sun/50 rounded-lg"><div className="text-2xl font-bold text-gold mb-1">{s.pct}</div><div className="text-xs text-cream-muted/70">{s.txt}</div></div>
-              ))}
-            </div>
-            <p className="text-xs text-cream-muted/40 mt-4">Sources : INRS, Assurance Maladie — Risques professionnels, 2024.</p>
-          </div>
-        </section>
-      </div>
+    <div className="mx-auto max-w-5xl px-4 py-20 lg:py-28">
+      <div className="mb-16"><p className="text-gold/60 text-xs font-medium uppercase tracking-[0.15em] mb-3">Troubles Musculo-Squelettiques</p><h1 className="font-display text-4xl lg:text-5xl font-bold text-cream mb-4">Comprendre les TMS</h1><p className="text-cream-muted/60 text-lg max-w-2xl">Définition, causes et prévention des troubles qui touchent les muscles, tendons et articulations.</p></div>
+      <section className="mb-16 bg-black-card border border-black-border-light rounded-2xl p-8 lg:p-12"><h2 className="font-display text-2xl font-semibold text-cream mb-4">Qu&apos;est-ce qu&apos;un TMS ?</h2><p className="text-cream-muted/70 leading-relaxed max-w-3xl">Les Troubles Musculo-Squelettiques (TMS) regroupent un ensemble de pathologies affectant les muscles, les tendons, les nerfs, les articulations et les ligaments. Ils touchent principalement les membres supérieurs, le dos et les membres inférieurs. Les TMS représentent la première cause de maladies professionnelles reconnues en France.</p></section>
+      <section className="mb-16"><h2 className="font-display text-2xl font-semibold text-cream mb-8">Les causes principales</h2><div className="grid gap-5 sm:grid-cols-2">{causes.map((item)=><div key={item.title} className="group bg-black-card border border-black-border-light rounded-xl p-6 hover:border-gold/15 transition-all duration-300"><item.icon className="h-6 w-6 text-gold/50 group-hover:text-gold/80 transition-colors mb-3" /><h3 className="font-display font-semibold text-cream mb-2">{item.title}</h3><p className="text-cream-muted/55 text-sm leading-relaxed">{item.desc}</p></div>)}</div></section>
+      <section className="mb-16"><h2 className="font-display text-2xl font-semibold text-cream mb-8">Reconnaître les signaux d&apos;alerte</h2><div className="bg-black-card border border-black-border-light rounded-2xl p-8 lg:p-10"><ul className="space-y-4">{signaux.map((s)=><li key={s} className="flex items-start gap-3 text-cream-muted/75"><span className="text-gold mt-0.5 shrink-0">▸</span><span>{s}</span></li>)}</ul><div className="mt-8 p-5 bg-warm/5 border border-warm/10 rounded-xl"><p className="text-sm text-cream-muted/70"><strong className="text-warm">Ne jamais ignorer ces signaux.</strong> Un TMS pris en charge précocement se guérit dans la majorité des cas. Signalez toute douleur persistante à votre responsable ou au médecin du travail.</p></div></div></section>
+      <section><h2 className="font-display text-2xl font-semibold text-cream mb-8">Focus : les TMS dans l&apos;esthétique et le bronzage</h2><div className="bg-black-card border border-black-border-light rounded-2xl p-8 lg:p-10"><p className="text-cream-muted/70 leading-relaxed mb-8">Le secteur de l&apos;esthétique et des centres de bronzage présente des facteurs de risque spécifiques. Les professionnels sont particulièrement exposés aux TMS du poignet, de la main et du rachis cervical, en raison de la nature même de leurs activités.</p><div className="grid gap-4 sm:grid-cols-3">{[{value:"Membres supérieurs",detail:"Poignets, mains et épaules sont les zones les plus sollicitées."},{value:"Rachis cervical",detail:"Les postures tête vers l'avant exposent fortement la nuque."},{value:"Lombaires",detail:"La station assise prolongée sollicite le bas du dos."}].map((s)=><div key={s.value} className="text-center p-5 bg-black-sun/50 rounded-xl"><p className="font-display font-bold text-gold text-lg mb-2">{s.value}</p><p className="text-cream-muted/45 text-xs leading-relaxed">{s.detail}</p></div>)}</div><p className="text-cream-muted/30 text-xs mt-6">Sources : INRS, Assurance Maladie — Risques professionnels.</p></div></section>
     </div>
   );
 }
