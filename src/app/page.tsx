@@ -134,26 +134,25 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ═══ SECTION CTA — CARTE SOMBRE (ink) POUR CONTRASTE FORT ═══ */}
-      <section className="bg-paper">
+      {/* ═══ SECTION CTA — FOND SOMBRE EXPLICITE ═══ */}
+      <section className="bg-[#fdfaf5]">
         <div className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 md:pb-28">
           <FadeIn>
-            <div className="bs-card-ink relative overflow-hidden p-8 sm:p-12 md:p-16">
-              <div className="bs-sun-texture absolute inset-0 opacity-15" aria-hidden="true" />
+            <div className="relative overflow-hidden rounded-2xl bg-[#2a1f15] p-8 sm:p-12 md:p-16">
               <div className="relative grid items-end gap-10 lg:grid-cols-12 lg:gap-12">
                 <div className="lg:col-span-7">
-                  <span className="bs-eyebrow !text-brand-light">Passer à l'action</span>
-                  <h2 className="font-display text-3xl font-bold leading-tight mt-4 text-paper md:text-4xl">Évaluez votre exposition,<br />signalez la moindre douleur.</h2>
-                  <p className="mt-5 max-w-xl text-base leading-relaxed text-paper/70">Cinq minutes suffisent pour faire le point. Et au moindre signal — dos, nuque, poignet, épaule — un signalement permet de garder une trace et d'agir tôt.</p>
+                  <span className="inline-flex items-center gap-2 text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-[#d4a523] mb-4">Passer à l'action</span>
+                  <h2 className="font-display text-3xl font-bold leading-tight text-[#fdfaf5] md:text-4xl">Évaluez votre exposition,<br />signalez la moindre douleur.</h2>
+                  <p className="mt-5 max-w-xl text-base leading-relaxed text-[#fdfaf5]/70">Cinq minutes suffisent pour faire le point. Et au moindre signal — dos, nuque, poignet, épaule — un signalement permet de garder une trace et d'agir tôt.</p>
                 </div>
-                <div className="flex flex-col gap-px overflow-hidden rounded-xl border border-paper/20 lg:col-span-4 lg:col-start-9">
-                  <Link href="/auto-evaluation" className="group flex items-center justify-between gap-4 bg-paper px-6 py-5 text-ink transition-colors hover:bg-brand-soft">
-                    <span className="inline-flex items-center gap-3"><ClipboardCheck className="h-5 w-5 text-brand" /><span className="font-display font-semibold">Faire l'auto-évaluation</span></span>
-                    <ArrowRight className="h-4 w-4 text-brand group-hover:translate-x-1 transition-transform" />
+                <div className="flex flex-col gap-px overflow-hidden rounded-xl border border-white/20 lg:col-span-4 lg:col-start-9">
+                  <Link href="/auto-evaluation" className="group flex items-center justify-between gap-4 bg-[#fdfaf5] px-6 py-5 text-[#2a1f15] transition-colors hover:bg-[#f5ead2]">
+                    <span className="inline-flex items-center gap-3"><ClipboardCheck className="h-5 w-5 text-[#b8860b]" /><span className="font-display font-semibold">Faire l'auto-évaluation</span></span>
+                    <ArrowRight className="h-4 w-4 text-[#b8860b] group-hover:translate-x-1 transition-transform" />
                   </Link>
-                  <Link href="/signalement" className="group flex items-center justify-between gap-4 bg-paper px-6 py-5 text-ink transition-colors hover:bg-brand-soft">
-                    <span className="inline-flex items-center gap-3"><Sun className="h-5 w-5 text-brand" /><span className="font-display font-semibold">Signaler une douleur</span></span>
-                    <ArrowRight className="h-4 w-4 text-brand group-hover:translate-x-1 transition-transform" />
+                  <Link href="/signalement" className="group flex items-center justify-between gap-4 bg-[#fdfaf5] px-6 py-5 text-[#2a1f15] transition-colors hover:bg-[#f5ead2]">
+                    <span className="inline-flex items-center gap-3"><Sun className="h-5 w-5 text-[#b8860b]" /><span className="font-display font-semibold">Signaler une douleur</span></span>
+                    <ArrowRight className="h-4 w-4 text-[#b8860b] group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </div>
               </div>
