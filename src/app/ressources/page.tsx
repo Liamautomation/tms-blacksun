@@ -43,7 +43,7 @@ export default function RessourcesPage() {
                   <div className="relative aspect-[3/4] bg-paper/50">
                     <Image src={affiche.src} alt={affiche.alt} fill className="object-contain p-3 transition-transform duration-300 group-hover:scale-105" sizes="(max-width: 640px) 100vw, 25vw" />
                   </div>
-                  <div className="p-4 border-t border-border flex items-center justify-between">
+                  <div className="p-4 border-t border-line flex items-center justify-between">
                     <span className="text-sm text-ink-soft group-hover:text-ink transition-colors">Affiche {i + 1}</span>
                     <span className="flex items-center gap-1.5 text-xs text-brand/60 group-hover:text-brand transition-colors">
                       <Download className="h-3.5 w-3.5" />

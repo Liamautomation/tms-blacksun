@@ -6,12 +6,12 @@ import { FadeIn, ScaleIn, HoverGlow } from "@/components/Animated";
 
 /* Classes de champ partagées — bordure dorée au focus + halo subtil */
 const fieldClass =
-  "w-full bg-paper border border-border rounded-2xl px-4 py-3 text-ink-soft text-sm transition-colors focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20";
+  "w-full bg-card border border-line rounded-2xl px-4 py-3 text-ink text-sm transition-colors focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20";
 
 const niveaux = [
-  { value: "faible", label: "Faible", ring: "border-green-500/20 text-green-400/60" },
-  { value: "modere", label: "Modéré", ring: "border-amber-500/20 text-amber-400/60" },
-  { value: "eleve", label: "Élevé", ring: "border-red-500/20 text-red-400/60" },
+  { value: "faible", label: "Faible", ring: "border-safe/20 text-safe" },
+  { value: "modere", label: "Modéré", ring: "border-amber/20 text-amber" },
+  { value: "eleve", label: "Élevé", ring: "border-alert/20 text-alert" },
 ];
 
 export default function SignalementPage() {
@@ -23,7 +23,7 @@ export default function SignalementPage() {
         <div className="bs-solar-glow bs-solar-glow-sm z-0" aria-hidden="true" />
         <div className="relative z-10 mx-auto max-w-xl px-4 py-20 text-center sm:px-6 md:py-28">
           <ScaleIn className="mx-auto mb-8">
-            <HoverGlow className="mx-auto flex h-20 w-20 items-center justify-center rounded-3xl border border-border bg-brand-soft">
+            <HoverGlow className="mx-auto flex h-20 w-20 items-center justify-center rounded-3xl border border-line bg-brand-soft">
               <Send className="h-10 w-10 text-brand" />
             </HoverGlow>
           </ScaleIn>
@@ -95,7 +95,7 @@ export default function SignalementPage() {
                 {niveaux.map((n) => (
                   <label
                     key={n.value}
-                    className={`flex cursor-pointer flex-col items-center gap-1.5 rounded-2xl border bg-paper p-3 transition-all ${n.ring} has-[:checked]:border-current has-[:checked]:bg-brand-mist has-[:checked]:shadow-[0_0_24px_-4px_rgba(200,150,46,0.35)]`}
+                    className={`flex cursor-pointer flex-col items-center gap-1.5 rounded-2xl border bg-card p-3 transition-all ${n.ring} has-[:checked]:border-current has-[:checked]:bg-brand-mist has-[:checked]:shadow-[0_0_24px_-4px_rgba(184,134,11,0.35)]`}
                   >
                     <input type="radio" name="urgence" value={n.value} required className="sr-only" />
                     <span className="text-xs font-medium">{n.label}</span>

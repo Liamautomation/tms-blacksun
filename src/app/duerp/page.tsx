@@ -10,7 +10,7 @@ export default function DuerpPage() {
       <div className="relative z-10 mx-auto max-w-2xl px-4 py-20 text-center sm:px-6 md:py-28">
         {/* Icône — entrée en scène par échelle */}
         <ScaleIn className="mx-auto mb-8">
-          <HoverGlow className="mx-auto flex h-20 w-20 items-center justify-center rounded-3xl border border-border bg-brand-soft">
+          <HoverGlow className="mx-auto flex h-20 w-20 items-center justify-center rounded-3xl border border-line bg-brand-soft">
             <FileText className="h-10 w-10 text-brand" />
           </HoverGlow>
         </ScaleIn>

@@ -10,7 +10,7 @@ const fiches = [
 const blocs = [
   { key: "risques" as const, icon: AlertTriangle, label: "Risques identifiés", color: "text-warm", bg: "bg-warm/5", border: "border-warm/10" },
   { key: "gestes" as const, icon: CheckCircle, label: "Gestes recommandés", color: "text-brand", bg: "bg-brand-soft", border: "border-brand/10" },
-  { key: "equipements" as const, icon: Wrench, label: "Équipements", color: "text-ink", bg: "bg-ink-muted/10", border: "border-border-light" },
+  { key: "equipements" as const, icon: Wrench, label: "Équipements", color: "text-ink", bg: "bg-ink-muted/10", border: "border-line-light" },
   { key: "alertes" as const, icon: Shield, label: "Signaux d'alerte", color: "text-warm", bg: "bg-warm/5", border: "border-warm/10" },
 ];
 
@@ -38,7 +38,7 @@ export default function FichesPostePage() {
               {/* Layout alterné : image à gauche pour fiche 1, à droite pour fiche 2 */}
               <div className={`grid lg:grid-cols-2 gap-6 items-start ${i % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""}`}>
                 {/* Image */}
-                <div className="relative aspect-video rounded-2xl overflow-hidden border border-border shadow-lg group">
+                <div className="relative aspect-video rounded-2xl overflow-hidden border border-line shadow-lg group">
                   <Image src="/images/photo_poste.jpg" alt={fiche.titre} fill className="object-cover transition-transform duration-500 group-hover:scale-105" sizes="(max-width: 1024px) 100vw, 50vw" />
                   <div className="absolute inset-0 bg-gradient-to-t from-paper/60 via-transparent to-transparent" />
                   <div className="absolute bottom-4 left-4">

@@ -31,14 +31,14 @@ const exploration = [
 export default function HomePage() {
   return (
     <>
-      {/* ═══ HERO — FULL BLEED IMAGE + SOLAR GLOW ═══ */}
+      {/* ═══ HERO ═══ */}
       <section className="relative min-h-[85vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=1800&q=85&auto=format&fit=crop" alt="Salon de bronzage et soins esthétiques" fill className="object-cover" priority sizes="100vw" />
-          <div className="absolute inset-0 bg-gradient-to-b from-paper/95 via-paper/75 to-paper" />
-          <div className="absolute inset-0 bg-gradient-to-r from-paper/80 via-transparent to-paper/60" />
+          <div className="absolute inset-0 bg-gradient-to-b from-paper/95 via-paper/80 to-paper" />
+          <div className="absolute inset-0 bg-gradient-to-r from-paper/85 via-paper/30 to-paper/50" />
         </div>
-        <div className="bs-solar-glow z-0" aria-hidden="true" />
+        <div className="bs-sun-glow z-0" aria-hidden="true" />
         <div className="relative z-10 mx-auto max-w-7xl px-4 py-20 sm:px-6 md:py-28">
           <div className="grid lg:grid-cols-[1fr_0.7fr] gap-12 items-center">
             <HeroReveal>
@@ -51,10 +51,10 @@ export default function HomePage() {
               </div>
             </HeroReveal>
             <HeroImage>
-              <div className="relative aspect-[4/5] rounded-2xl overflow-hidden border border-border shadow-2xl">
+              <div className="relative aspect-[4/5] rounded-2xl overflow-hidden border border-line shadow-[0_12px_40px_rgba(42,31,21,0.08)]">
                 <Image src="https://images.unsplash.com/photo-1560750588-73207b1ef5b8?w=800&q=85&auto=format&fit=crop" alt="Soins esthétiques et manucure" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 35vw" />
-                <div className="absolute inset-0 bg-gradient-to-t from-paper/40 to-transparent" />
-                <div className="absolute bottom-6 left-6 right-6 h-0.5 bg-gradient-to-r from-transparent via-brand/60 to-transparent rounded-full" />
+                <div className="absolute inset-0 bg-gradient-to-t from-paper/30 to-transparent" />
+                <div className="absolute bottom-6 left-6 right-6 h-0.5 bg-gradient-to-r from-transparent via-brand/50 to-transparent rounded-full" />
               </div>
             </HeroImage>
           </div>
@@ -89,7 +89,7 @@ export default function HomePage() {
               <p className="font-display text-2xl font-semibold leading-snug text-ink md:text-3xl">« Dans un centre de bronzage et d'onglerie, notre santé est notre premier outil de travail. J'ai créé cet espace pour que chacune garde les bons réflexes, prévienne les douleurs et s'épanouisse dans son métier. »</p>
               <footer className="mt-6">
                 <div className="flex items-center gap-3">
-                  <Image src="/images/logo.png" alt="Black Sun Villetaneuse" width={48} height={48} className="rounded-full border border-border" />
+                  <Image src="/images/logo.png" alt="Black Sun Villetaneuse" width={48} height={48} className="rounded-full border border-line" />
                   <div><p className="font-display font-bold text-ink">Black Sun Villetaneuse</p><p className="text-sm text-ink-soft">Centre de bronzage & onglerie</p></div>
                 </div>
               </footer>
@@ -112,20 +112,20 @@ export default function HomePage() {
         <div className="bs-bento-3">
           <StaggerContainer className="bs-card-tint p-8 flex flex-col justify-between">
             <StaggerItem><span className="bs-chip mb-4">Étape par étape</span><h3 className="font-display text-2xl font-bold text-ink mb-3">5 piliers pour prévenir les TMS</h3><p className="text-sm leading-relaxed text-ink-soft">De l'observation des gestes à risque jusqu'à l'amélioration continue, chaque pilier renforce la protection de nos équipes.</p></StaggerItem>
-            <StaggerItem className="mt-6">{demarche.slice(0,2).map((d)=>(<div key={d.num} className="flex items-start gap-3 py-3 border-b border-border last:border-0"><span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-soft text-brand font-display text-sm font-bold">{d.num}</span><div><p className="font-display font-semibold text-ink text-sm">{d.title}</p><p className="text-xs text-ink-soft mt-0.5">{d.desc}</p></div></div>))}</StaggerItem>
+            <StaggerItem className="mt-6">{demarche.slice(0,2).map((d)=>(<div key={d.num} className="flex items-start gap-3 py-3 border-b border-line last:border-0"><span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-soft text-brand-deep font-display text-sm font-bold">{d.num}</span><div><p className="font-display font-semibold text-ink text-sm">{d.title}</p><p className="text-xs text-ink-soft mt-0.5">{d.desc}</p></div></div>))}</StaggerItem>
           </StaggerContainer>
           <div className="flex flex-col gap-4">{demarche.slice(2,4).map((d)=>(<HoverLift key={d.num} className="bs-card p-6 flex-1"><div className="flex items-center gap-3 mb-3"><span className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-soft"><d.icon className="h-5 w-5 text-brand" /></span><span className="bs-chip">{d.num}</span></div><h3 className="font-display font-semibold text-ink">{d.title}</h3><p className="text-sm text-ink-soft mt-1.5">{d.desc}</p></HoverLift>))}</div>
-          <HoverGlow className="bs-card-ink p-6 flex flex-col justify-between"><div><p className="bs-eyebrow !text-ink/50">Prête à agir ?</p><p className="font-display text-xl font-bold mt-3">5 minutes pour évaluer votre exposition.</p></div><Link href="/auto-evaluation" className="mt-6 inline-flex items-center gap-2 self-start rounded-full bg-paper px-5 py-3 text-sm font-semibold text-brand transition-transform hover:-translate-y-0.5">Lancer l'auto-évaluation<ArrowRight className="h-4 w-4" /></Link></HoverGlow>
+          <HoverGlow className="bs-card-ink p-6 flex flex-col justify-between"><div><p className="bs-eyebrow !text-white/60">Prête à agir ?</p><p className="font-display text-xl font-bold mt-3">5 minutes pour évaluer votre exposition.</p></div><Link href="/auto-evaluation" className="mt-6 inline-flex items-center gap-2 self-start rounded-full bg-white px-5 py-3 text-sm font-semibold text-brand-deep transition-transform hover:-translate-y-0.5">Lancer l'auto-évaluation<ArrowRight className="h-4 w-4" /></Link></HoverGlow>
         </div>
         <FadeIn delay={0.2} className="mt-4"><div className="bs-card p-6 flex flex-col sm:flex-row sm:items-center gap-4"><div className="flex items-center gap-3"><span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-soft"><TrendingUp className="h-5 w-5 text-brand" /></span><span className="bs-chip">{demarche[4].num}</span></div><div className="flex-1"><h3 className="font-display font-semibold text-ink">{demarche[4].title}</h3><p className="text-sm text-ink-soft mt-0.5">{demarche[4].desc}</p></div><Link href="/auto-evaluation" className="bs-btn bs-btn-primary shrink-0">Commencer<ArrowRight className="h-4 w-4" /></Link></div></FadeIn>
       </section>
 
       {/* ═══ EXPLORER ═══ */}
-      <section className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 md:pb-28 bs-arc-section">
+      <section className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 md:pb-28">
         <FadeIn className="max-w-2xl mb-12"><p className="bs-eyebrow">Votre parcours</p><h2 className="bs-display-section text-ink">Par où commencer ?</h2></FadeIn>
         <StaggerContainer className="relative pl-12 sm:pl-14">
           <span className="absolute left-[17px] bottom-8 top-8 w-[3px] bg-gradient-to-b from-brand via-brand/40 to-transparent sm:left-[22px]" aria-hidden="true" />
-          <div className="grid gap-4">{exploration.map((item,i)=>(<StaggerItem key={item.href}><Link href={item.href} className="bs-card-lift group flex items-center gap-4 sm:gap-6 p-5 sm:p-6"><span className="absolute -left-12 top-1/2 z-10 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-brand text-xs font-bold text-paper shadow-[0_4px_16px_-4px_rgba(200,150,46,0.5)] sm:-left-14 sm:h-9 sm:w-9" aria-hidden="true">{item.num}</span><div className="flex-1"><span className="font-display text-lg font-semibold text-ink sm:text-xl group-hover:text-brand transition-colors">{item.label}</span><p className="text-sm text-ink-soft mt-0.5">{item.sub}</p></div><div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-soft text-brand group-hover:bg-brand group-hover:text-paper transition-all"><ArrowRight className="h-5 w-5" /></div></Link></StaggerItem>))}</div>
+          <div className="grid gap-4">{exploration.map((item,i)=>(<StaggerItem key={item.href}><Link href={item.href} className="bs-card-lift group flex items-center gap-4 sm:gap-6 p-5 sm:p-6"><span className="absolute -left-12 top-1/2 z-10 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-brand text-xs font-bold text-white shadow-[0_4px_16px_-4px_rgba(184,134,11,0.4)] sm:-left-14 sm:h-9 sm:w-9" aria-hidden="true">{item.num}</span><div className="flex-1"><span className="font-display text-lg font-semibold text-ink sm:text-xl group-hover:text-brand transition-colors">{item.label}</span><p className="text-sm text-ink-soft mt-0.5">{item.sub}</p></div><div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-soft text-brand-deep group-hover:bg-brand group-hover:text-white transition-all"><ArrowRight className="h-5 w-5" /></div></Link></StaggerItem>))}</div>
         </StaggerContainer>
       </section>
     </>

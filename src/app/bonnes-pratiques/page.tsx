@@ -51,7 +51,7 @@ export default function BonnesPratiquesPage() {
           <StaggerItem key={proto.numero}>
             <section className="bs-card overflow-hidden">
               {/* En-tête */}
-              <div className="p-6 lg:p-8 border-b border-border bg-card-tint/50">
+              <div className="p-6 lg:p-8 border-b border-line bg-card-tint/50">
                 <div className="flex items-center gap-4">
                   <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-soft text-brand font-display font-bold text-sm border border-brand/10">{proto.numero}</div>
                   <div>

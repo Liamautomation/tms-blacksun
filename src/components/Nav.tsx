@@ -23,7 +23,7 @@ export function Nav() {
   return (
     <header className="sticky top-0 z-50 px-3 pt-3 sm:px-4 sm:pt-4">
       <div className="mx-auto max-w-7xl">
-        <div className="flex items-center justify-between gap-2 rounded-full bg-card/85 py-2 pl-4 pr-2 backdrop-blur-md shadow-[0_6px_22px_-14px_rgba(200,150,46,0.12)] border border-border">
+        <div className="flex items-center justify-between gap-2 rounded-full bg-card/90 py-2 pl-4 pr-2 backdrop-blur-md shadow-[0_4px_24px_-12px_rgba(42,31,21,0.10)] border border-line">
           {/* Logo */}
           <Link href="/" className="shrink-0 flex items-center" aria-label="Black Sun Villetaneuse — Accueil">
             <Image
@@ -42,7 +42,7 @@ export function Nav() {
               <li>
                 <Link
                   href="/"
-                  className={`block rounded-full px-3.5 py-2 text-[13px] font-medium transition-colors ${pathname === "/" ? "bg-brand text-paper" : "text-ink-soft hover:bg-brand-mist hover:text-ink"}`}
+                  className={`block rounded-full px-3.5 py-2 text-[13px] font-medium transition-colors ${pathname === "/" ? "bg-brand text-white" : "text-ink-soft hover:bg-brand-mist hover:text-ink"}`}
                 >
                   Accueil
                 </Link>
@@ -53,7 +53,7 @@ export function Nav() {
                   <li key={p.href}>
                     <Link
                       href={p.href}
-                      className={`block rounded-full px-3.5 py-2 text-[13px] font-medium transition-colors ${active ? "bg-brand text-paper" : "text-ink-soft hover:bg-brand-mist hover:text-ink"}`}
+                      className={`block rounded-full px-3.5 py-2 text-[13px] font-medium transition-colors ${active ? "bg-brand text-white" : "text-ink-soft hover:bg-brand-mist hover:text-ink"}`}
                     >
                       {p.label}
                     </Link>
@@ -77,7 +77,7 @@ export function Nav() {
               aria-expanded={open}
               aria-controls="menu-mobile"
               onClick={() => setOpen(!open)}
-              className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-brand-soft text-brand transition-colors hover:bg-brand-mist xl:hidden"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-brand-soft text-brand-deep transition-colors hover:bg-brand-mist xl:hidden"
             >
               <span className="sr-only">{open ? "Fermer" : "Menu"}</span>
               {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -89,13 +89,13 @@ export function Nav() {
       {/* Mobile menu */}
       {open && (
         <div id="menu-mobile" className="mx-auto max-w-7xl px-3 pt-2 xl:hidden">
-          <div className="rounded-2xl bg-card/95 backdrop-blur-md border border-border p-4 shadow-lg">
+          <div className="rounded-2xl bg-card/95 backdrop-blur-md border border-line p-4 shadow-[0_8px_30px_rgba(42,31,21,0.08)]">
             <nav>
               <ul className="grid gap-1">
-                <li><Link href="/" onClick={() => setOpen(false)} className={`block rounded-xl px-4 py-2.5 text-sm font-medium ${pathname === "/" ? "bg-brand text-paper" : "text-ink-soft hover:bg-brand-mist hover:text-ink"}`}>Accueil</Link></li>
+                <li><Link href="/" onClick={() => setOpen(false)} className={`block rounded-xl px-4 py-2.5 text-sm font-medium ${pathname === "/" ? "bg-brand text-white" : "text-ink-soft hover:bg-brand-mist hover:text-ink"}`}>Accueil</Link></li>
                 {pages.map((p) => (
                   <li key={p.href}>
-                    <Link href={p.href} onClick={() => setOpen(false)} className={`block rounded-xl px-4 py-2.5 text-sm font-medium ${pathname === p.href ? "bg-brand text-paper" : "text-ink-soft hover:bg-brand-mist hover:text-ink"}`}>{p.label}</Link>
+                    <Link href={p.href} onClick={() => setOpen(false)} className={`block rounded-xl px-4 py-2.5 text-sm font-medium ${pathname === p.href ? "bg-brand text-white" : "text-ink-soft hover:bg-brand-mist hover:text-ink"}`}>{p.label}</Link>
                   </li>
                 ))}
               </ul>

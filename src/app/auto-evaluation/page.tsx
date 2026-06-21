@@ -85,8 +85,8 @@ export default function AutoEvaluationPage() {
                 </p>
                 <div className="flex gap-3">
                   {[
-                    { value: true, label: "Oui", active: "bg-warm text-paper border-warm", inactive: "border-border text-ink-muted hover:border-warm/30 hover:text-ink-soft" },
-                    { value: false, label: "Non", active: "bg-brand text-paper border-brand", inactive: "border-border text-ink-muted hover:border-brand/30 hover:text-ink-soft" },
+                    { value: true, label: "Oui", active: "bg-warm text-white border-warm", inactive: "border-line text-ink-muted hover:border-warm/30 hover:text-ink-soft" },
+                    { value: false, label: "Non", active: "bg-brand text-white border-brand", inactive: "border-line text-ink-muted hover:border-brand/30 hover:text-ink-soft" },
                   ].map((opt) => (
                     <button
                       key={String(opt.value)}

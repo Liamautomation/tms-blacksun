@@ -107,7 +107,7 @@ export default function ComprendreTMSPage() {
             <StaggerContainer className="grid gap-4 sm:grid-cols-3">
               {zones.map((s) => (
                 <StaggerItem key={s.value}>
-                  <div className="text-center p-6 bg-paper/50 rounded-2xl border border-border-light hover:border-brand/20 transition-colors h-full">
+                  <div className="text-center p-6 bg-paper/50 rounded-2xl border border-line-light hover:border-brand/20 transition-colors h-full">
                     <p className="font-display font-bold text-brand text-lg mb-2">{s.value}</p>
                     <p className="text-ink-soft text-xs leading-relaxed">{s.detail}</p>
                   </div>

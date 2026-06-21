@@ -89,7 +89,7 @@ export function HoverLift({ children, className }: { children: ReactNode; classN
 
 export function HoverGlow({ children, className }: { children: ReactNode; className?: string }) {
   return (
-    <motion.div whileHover={{ boxShadow: "0 0 40px rgba(200,150,46,0.12)", transition: { duration: 0.35 } }} className={className}>
+    <motion.div whileHover={{ boxShadow: "0 0 40px rgba(184,134,11,0.08)", transition: { duration: 0.35 } }} className={className}>
       {children}
     </motion.div>
   );
