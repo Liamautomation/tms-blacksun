@@ -3,13 +3,12 @@
 @theme inline {
   /* ── Black Sun — Thème clair « Soin & confiance » ──
      Crème chaude · Or sombre · Brun chaud · Serif élégant
-     Archétype beauté/esthétique — lumière solaire subtile */
+     Lumière solaire subtile · Surfaces douces arrondies
+     Profondeur par contraste de fonds + ombres douces, pas par bordures épaisses */
 
   --color-paper: #fdfaf5;
   --color-card: #ffffff;
   --color-card-tint: #faf4ea;
-  --color-card-raised: #ffffff;
-
   --color-ink: #2a1f15;
   --color-ink-soft: #6b5d4f;
   --color-ink-muted: #9b8f80;
@@ -19,13 +18,11 @@
   --color-brand-light: #d4a523;
   --color-brand-soft: #f5ead2;
   --color-brand-mist: #faf3e3;
-  --color-brand-glow: rgba(184, 134, 11, 0.10);
 
   --color-warm: #e8913a;
 
   --color-line: #ebe2d4;
   --color-border: rgba(184, 134, 11, 0.15);
-  --color-border-light: rgba(184, 134, 11, 0.08);
 
   --color-alert: #b3341c;
   --color-amber: #9a5b06;
@@ -47,283 +44,106 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-::selection {
-  background: var(--color-brand-soft);
-  color: var(--color-brand-deep);
-}
-
-:focus-visible {
-  outline: 3px solid var(--color-brand);
-  outline-offset: 2px;
-  border-radius: 4px;
-}
-
-html {
-  scroll-behavior: smooth;
-}
+::selection { background: var(--color-brand-soft); color: var(--color-brand-deep); }
+:focus-visible { outline: 3px solid var(--color-brand); outline-offset: 2px; border-radius: 4px; }
+html { scroll-behavior: smooth; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
-  }
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }
 
-/* ═══════════════════════════════════════════════
-   BS — Signature solaire (léger, sur fond clair)
-   ═══════════════════════════════════════════════ */
+/* ═══ SIGNATURE SOLAIRE ═══ */
 
-/* Arc solaire — séparateur de sections */
-.bs-sun-arc {
-  position: relative;
-}
+/* Arc solaire — séparateur de sections, très subtil */
+.bs-sun-arc { position: relative; }
 .bs-sun-arc::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 140px;
-  height: 3px;
+  content: ""; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+  width: 140px; height: 3px;
   background: linear-gradient(90deg, transparent, var(--color-brand-light), transparent);
   border-radius: 2px;
 }
 
-/* Halo solaire décoratif — très subtil sur clair */
+/* Halo solaire — radial très léger sur fond clair */
 .bs-sun-glow {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 700px;
-  height: 500px;
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: 700px; height: 500px;
   background: radial-gradient(ellipse 50% 40% at 50% 40%, rgba(184,134,11,0.07) 0%, transparent 70%);
   pointer-events: none;
 }
 
-/* Rayons solaires subtils (SVG-like via CSS) */
-.bs-sun-rays {
-  position: absolute;
-  top: -40px;
-  right: -40px;
-  width: 200px;
-  height: 200px;
-  background: radial-gradient(circle, rgba(212,165,35,0.06) 0%, transparent 60%);
-  pointer-events: none;
+/* Texture grain solaire subtile (pointillés dorés très clairs) */
+.bs-sun-texture {
+  background-image: radial-gradient(rgba(184,134,11,0.04) 1px, transparent 1.5px);
+  background-size: 28px 28px;
 }
 
-/* ═══════════════════════════════════════════════
-   BS — Typographie éditoriale
-   ═══════════════════════════════════════════════ */
+/* ═══ TYPOGRAPHIE ÉDITORIALE ═══ */
 
-.bs-display {
-  font-family: var(--font-display);
-  font-weight: 600;
-  line-height: 1.15;
-  letter-spacing: -0.015em;
-}
+.bs-display { font-family: var(--font-display); font-weight: 600; line-height: 1.12; letter-spacing: -0.015em; }
+.bs-display-hero { font-family: var(--font-display); font-weight: 700; line-height: 1.05; letter-spacing: -0.02em; font-size: clamp(2.5rem, 5.5vw, 5rem); }
+.bs-display-section { font-family: var(--font-display); font-weight: 600; line-height: 1.12; letter-spacing: -0.015em; font-size: clamp(1.75rem, 3.2vw, 2.75rem); }
 
-.bs-display-hero {
-  font-family: var(--font-display);
-  font-weight: 700;
-  line-height: 1.08;
-  letter-spacing: -0.02em;
-  font-size: clamp(2.5rem, 5.5vw, 5rem);
-}
-
-.bs-display-section {
-  font-family: var(--font-display);
-  font-weight: 600;
-  line-height: 1.15;
-  letter-spacing: -0.015em;
-  font-size: clamp(1.75rem, 3.2vw, 2.75rem);
-}
-
+/* Eyebrow — label au-dessus des titres, langage design cohérent */
 .bs-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-family: var(--font-body);
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--color-brand-deep);
-  margin-bottom: 0.75rem;
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  font-family: var(--font-body); font-size: 0.72rem; font-weight: 600;
+  letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-brand-deep);
 }
-.bs-eyebrow::before {
-  content: "";
-  width: 1.5rem;
-  height: 1.5px;
-  background: var(--color-brand);
-  border-radius: 1px;
-}
+.bs-eyebrow::before { content: ""; width: 1.75rem; height: 1.5px; background: var(--color-brand); border-radius: 1px; }
 
-/* ═══════════════════════════════════════════════
-   BS — Cartes (surfaces claires douces)
-   ═══════════════════════════════════════════════ */
+/* ═══ CARTES — surfaces douces ═══ */
 
 .bs-card {
-  background: var(--color-card);
-  border: 1px solid var(--color-line);
-  border-radius: var(--radius-card);
+  background: var(--color-card); border: 1px solid var(--color-line); border-radius: var(--radius-card);
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
-.bs-card:hover {
-  border-color: var(--color-border);
-  box-shadow: 0 4px 20px rgba(42, 31, 21, 0.05);
-}
+.bs-card:hover { border-color: var(--color-border); box-shadow: 0 4px 20px rgba(42,31,21,0.05); }
 
 .bs-card-lift {
-  background: var(--color-card);
-  border: 1px solid var(--color-line);
-  border-radius: var(--radius-card);
+  background: var(--color-card); border: 1px solid var(--color-line); border-radius: var(--radius-card);
   transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
-.bs-card-lift:hover {
-  transform: translateY(-3px);
-  border-color: var(--color-border);
-  box-shadow: 0 12px 40px rgba(184, 134, 11, 0.08), 0 2px 8px rgba(42, 31, 21, 0.04);
-}
+.bs-card-lift:hover { transform: translateY(-3px); border-color: var(--color-border); box-shadow: 0 12px 40px rgba(184,134,11,0.08), 0 2px 8px rgba(42,31,21,0.04); }
 
-.bs-card-tint {
-  background: var(--color-card-tint);
-  border: 1px solid var(--color-line);
-  border-radius: 1.25rem;
-}
+.bs-card-tint { background: var(--color-card-tint); border: 1px solid var(--color-line); border-radius: 1.25rem; }
+.bs-card-ink { background: var(--color-ink); color: var(--color-paper); border-radius: var(--radius-card); }
+.bs-card-ink p, .bs-card-ink span, .bs-card-ink h2, .bs-card-ink h3 { color: var(--color-paper); }
 
-.bs-card-ink {
-  background: linear-gradient(135deg, var(--color-brand-deep) 0%, var(--color-brand) 100%);
-  border-radius: var(--radius-card);
-  color: #fff;
-}
-.bs-card-ink p, .bs-card-ink span, .bs-card-ink h2, .bs-card-ink h3 {
-  color: #fff;
-}
+.bs-card-brand { background: linear-gradient(135deg, var(--color-brand-deep) 0%, var(--color-brand) 100%); border-radius: var(--radius-card); color: #fff; }
+.bs-card-brand p, .bs-card-brand span, .bs-card-brand h2, .bs-card-brand h3 { color: #fff; }
 
-/* ═══════════════════════════════════════════════
-   BS — Bento & layouts
-   ═══════════════════════════════════════════════ */
+/* ═══ BENTO & LAYOUTS ═══ */
+.bs-bento-3 { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 1rem; }
+@media (max-width: 768px) { .bs-bento-3 { grid-template-columns: 1fr; } }
+.bs-asymmetric { display: grid; grid-template-columns: 5fr 4fr; gap: 3rem; align-items: center; }
+@media (max-width: 768px) { .bs-asymmetric { grid-template-columns: 1fr; } }
 
-.bs-bento-3 {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 1rem;
-}
-@media (max-width: 768px) {
-  .bs-bento-3 { grid-template-columns: 1fr; }
-}
+/* ═══ CHIPS & BOUTONS ═══ */
+.bs-chip { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.28rem 0.8rem; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--color-brand-deep); background: var(--color-brand-soft); border-radius: 9999px; }
 
-.bs-asymmetric {
-  display: grid;
-  grid-template-columns: 5fr 4fr;
-  gap: 3rem;
-  align-items: center;
-}
-@media (max-width: 768px) {
-  .bs-asymmetric { grid-template-columns: 1fr; }
-}
+.bs-btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.7rem 1.5rem; font-size: 0.85rem; font-weight: 600; border-radius: var(--radius-btn); transition: all 0.25s ease; text-decoration: none; cursor: pointer; }
+.bs-btn-primary { background: var(--color-brand); color: #fff; }
+.bs-btn-primary:hover { background: var(--color-brand-deep); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(184,134,11,0.25); }
+.bs-btn-ghost { color: var(--color-ink); border: 1px solid var(--color-line); background: var(--color-card); }
+.bs-btn-ghost:hover { border-color: var(--color-brand); color: var(--color-brand-deep); background: var(--color-brand-mist); }
+.bs-btn-outline { color: var(--color-brand-deep); border: 1px solid var(--color-border); background: transparent; }
+.bs-btn-outline:hover { background: var(--color-brand-soft); border-color: var(--color-brand); }
 
-/* ═══════════════════════════════════════════════
-   BS — Chips & boutons
-   ═══════════════════════════════════════════════ */
-
-.bs-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.28rem 0.8rem;
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: var(--color-brand-deep);
-  background: var(--color-brand-soft);
-  border-radius: 9999px;
-}
-
-.bs-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.7rem 1.5rem;
-  font-size: 0.85rem;
-  font-weight: 600;
-  border-radius: var(--radius-btn);
-  transition: all 0.25s ease;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.bs-btn-primary {
-  background: var(--color-brand);
-  color: #fff;
-}
-.bs-btn-primary:hover {
-  background: var(--color-brand-deep);
-  transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(184, 134, 11, 0.25);
-}
-
-.bs-btn-ghost {
-  color: var(--color-ink);
-  border: 1px solid var(--color-line);
-  background: var(--color-card);
-}
-.bs-btn-ghost:hover {
-  border-color: var(--color-brand);
-  color: var(--color-brand-deep);
-  background: var(--color-brand-mist);
-}
-
-.bs-btn-outline {
-  color: var(--color-brand-deep);
-  border: 1px solid var(--color-border);
-  background: transparent;
-}
-.bs-btn-outline:hover {
-  background: var(--color-brand-soft);
-  border-color: var(--color-brand);
-}
-
-/* ═══════════════════════════════════════════════
-   BS — Animations
-   ═══════════════════════════════════════════════ */
-
+/* ═══ ANIMATIONS CSS (complément framer-motion) ═══ */
+@keyframes bsFadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
 .bs-in { animation: bsFadeUp 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
-.bs-in-1 { animation-delay: 0.08s; }
-.bs-in-2 { animation-delay: 0.16s;; }
-.bs-in-3 { animation-delay: 0.24s; }
-.bs-in-4 { animation-delay: 0.32s; }
-.bs-in-5 { animation-delay: 0.4s; }
-.bs-in-6 { animation-delay: 0.48s; }
+.bs-in-1 { animation-delay: 0.08s; } .bs-in-2 { animation-delay: 0.16s; } .bs-in-3 { animation-delay: 0.24s; }
+.bs-in-4 { animation-delay: 0.32s; } .bs-in-5 { animation-delay: 0.4s; }
 
-@keyframes bsFadeUp {
-  from { opacity: 0; transform: translateY(18px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes bsSolarPulse {
-  0%, 100% { opacity: 0.4; }
-  50% { opacity: 0.8; }
-}
+@keyframes bsSolarPulse { 0%, 100% { opacity: 0.4; } 50% { opacity: 0.8; } }
 .bs-solar-pulse { animation: bsSolarPulse 5s ease-in-out infinite; }
 
-/* ═══════════════════════════════════════════════
-   Scrollbar & divers
-   ═══════════════════════════════════════════════ */
-
+/* ═══ SCROLLBAR ═══ */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--color-paper); }
 ::-webkit-scrollbar-thumb { background: var(--color-line); border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--color-brand-light); }
 
-@media (prefers-reduced-motion: reduce) {
-  .bs-in, .bs-solar-pulse { animation: none; }
-}
-
-@media print {
-  header, footer, nav, .no-print { display: none !important; }
-  body { background: #fff; }
-}
+@media (prefers-reduced-motion: reduce) { .bs-in, .bs-solar-pulse { animation: none; } }
+@media print { header, footer, nav, .no-print { display: none !important; } body { background: #fff; } }

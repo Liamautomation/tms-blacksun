@@ -57,12 +57,19 @@ export default function AutoEvaluationPage() {
   );
 
   return (
+    <>
+    <section className="relative overflow-hidden bg-card-tint border-b border-line">
+      <div className="bs-sun-texture absolute inset-0 opacity-50" aria-hidden="true" />
+      <div className="relative mx-auto max-w-2xl px-4 pb-12 pt-12 sm:px-6 md:pb-16 md:pt-16">
+        <FadeIn>
+          <p className="bs-eyebrow">Test personnel</p>
+          <h1 className="bs-display-section text-ink mt-4">Auto-évaluation TMS</h1>
+          <p className="mt-5 max-w-xl text-base leading-relaxed text-ink-soft md:text-lg">20 questions pour évaluer votre exposition. Répondez honnêtement : ce test est anonyme.</p>
+        </FadeIn>
+      </div>
+    </section>
+
     <div className="mx-auto max-w-2xl px-4 py-14 sm:px-6 md:py-20">
-      <FadeIn className="mb-10">
-        <p className="bs-eyebrow">Test personnel</p>
-        <h1 className="bs-display-section text-ink">Auto-évaluation TMS</h1>
-        <p className="mt-4 text-lg text-ink-soft">20 questions pour évaluer votre exposition. Répondez honnêtement : ce test est anonyme.</p>
-      </FadeIn>
 
       {/* Progress bar */}
       <FadeIn delay={0.1} className="mb-6">
@@ -110,5 +117,6 @@ export default function AutoEvaluationPage() {
         </div>
       </form>
     </div>
+    </>
   );
 }
