@@ -28,7 +28,7 @@ export default function DuerpPage() {
  <p className="text-sm leading-relaxed text-ink-soft">Le document sera disponible prochainement.</p>
  <div className="mt-4 inline-flex items-center gap-2 rounded-2xl bg-card/50 px-5 py-3 text-sm text-ink-muted">
  <FileText className="h-4 w-4" />
- [À COMPLÉTER]
+ Document en cours de finalisation.
  </div>
  </HoverGlow>
  </FadeIn>

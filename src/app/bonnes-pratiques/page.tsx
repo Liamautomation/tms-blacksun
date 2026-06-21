@@ -45,7 +45,7 @@ export default function BonnesPratiquesPage() {
  <Play className="h-7 w-7 text-brand/50" />
  </div>
  <p className="text-ink-muted text-sm">Vidéo de prévention TMS</p>
- <p className="text-ink-muted/50 text-xs mt-1">[À COMPLÉTER]</p>
+ 
  </div>
  </div>
  </div>

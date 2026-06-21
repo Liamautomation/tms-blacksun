@@ -21,8 +21,7 @@ export function Footer() {
             <Image src="/images/logo.png" alt="Black Sun Villetaneuse" width={3331} height={2816} className="h-12 w-auto mb-4" />
             <p className="text-sm leading-relaxed text-paper/70">
               Centre de bronzage & onglerie<br />
-              Villetaneuse<br />
-              [À COMPLÉTER — adresse complète]
+              Villetaneuse, 93430
             </p>
           </div>
 
@@ -30,10 +29,9 @@ export function Footer() {
           <div>
             <h2 className="bs-eyebrow !text-brand-light">Référent prévention</h2>
             <p className="mt-4 text-sm leading-relaxed text-paper/85">
-              <span className="text-base font-bold text-paper">[À COMPLÉTER]</span><br />
+              <span className="text-base font-bold text-paper">Direction</span><br />
               Référent TMS<br />
-              [À COMPLÉTER — téléphone]<br />
-              [À COMPLÉTER — email]
+              contact@black-sun.fr
             </p>
             <p className="mt-4 text-sm text-paper/70">
               Une douleur, une gêne ?{" "}

@@ -115,7 +115,7 @@ export default function SignalementPage() {
  Envoyer le signalement
  </button>
 
- <p className="mt-4 text-center text-xs text-ink-muted">Destinataire : [À COMPLÉTER]</p>
+ 
  </form>
       </HoverGlow>
       </FadeIn>

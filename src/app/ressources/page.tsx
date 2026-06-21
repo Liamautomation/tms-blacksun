@@ -72,7 +72,7 @@ export default function RessourcesPage() {
  <BookOpen className="h-6 w-6" />
  </div>
  <h3 className="font-display font-semibold mb-2">Fiches gestes et postures</h3>
- <p className="text-sm opacity-70">[À COMPLÉTER]</p>
+ 
  </ScaleIn>
  </StaggerItem>
  <StaggerItem>
@@ -81,7 +81,7 @@ export default function RessourcesPage() {
  <FolderOpen className="h-6 w-6" />
  </div>
  <h3 className="font-display font-semibold mb-2">Modes opératoires</h3>
- <p className="text-sm opacity-70">[À COMPLÉTER]</p>
+ 
  </ScaleIn>
  </StaggerItem>
  </StaggerContainer>

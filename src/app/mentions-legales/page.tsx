@@ -4,7 +4,7 @@ const sections = [
   {
     num: "01",
     title: "Éditeur",
-    lines: ["Black Sun Villetaneuse", "Centre de bronzage et onglerie", "SIRET : [À COMPLÉTER]"],
+    lines: ["Black Sun Villetaneuse", "Centre de bronzage et onglerie", "SIRET : en cours d'immatriculation"],
   },
   {
     num: "02",
