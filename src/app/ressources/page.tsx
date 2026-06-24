@@ -1,6 +1,8 @@
-import { Download, ExternalLink, FileText, BookOpen, FolderOpen, ArrowUpRight } from "lucide-react";
+import { Download, ExternalLink, FileText, ClipboardList, ArrowUpRight } from "lucide-react";
 import Image from "next/image";
-import { FadeIn, StaggerContainer, StaggerItem, HoverLift, ScaleIn } from "@/components/Animated";
+import Link from "next/link";
+import { FadeIn, StaggerContainer, StaggerItem, HoverLift } from "@/components/Animated";
+import { annexes } from "@/lib/data/annexes";
 
 const affiches = [
  { src: "/images/affiche1.png", alt: "Affiche prévention TMS 1" },
@@ -63,27 +65,35 @@ export default function RessourcesPage() {
  </StaggerContainer>
  </section>
 
- {/* ═══ PLACEHOLDERS — CARDS INK ═══ */}
+ {/* ═══ DOCUMENTHÈQUE — ANNEXES À REMPLIR ═══ */}
  <section className="mb-16">
- <StaggerContainer className="grid gap-5 sm:grid-cols-2">
- <StaggerItem>
- <ScaleIn className="bs-card-ink p-8 text-center h-full flex flex-col items-center justify-center">
- <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-paper/15 mx-auto mb-4">
- <BookOpen className="h-6 w-6" />
+ <FadeIn className="mb-6">
+ <div className="flex items-center gap-2">
+ <ClipboardList className="h-5 w-5 text-brand" />
+ <h2 className="font-display text-xl font-semibold text-ink">Annexes à remplir</h2>
  </div>
- <h3 className="font-display font-semibold mb-2">Fiches gestes et postures</h3>
- 
- </ScaleIn>
- </StaggerItem>
- <StaggerItem>
- <ScaleIn className="bs-card-ink p-8 text-center h-full flex flex-col items-center justify-center">
- <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-paper/15 mx-auto mb-4">
- <FolderOpen className="h-6 w-6" />
+ <p className="mt-2 text-sm text-ink-muted">Fiches de prévention TMS à consulter en ligne, imprimer ou télécharger en PDF.</p>
+ </FadeIn>
+ <StaggerContainer className="grid gap-5 sm:grid-cols-3">
+ {annexes.map((a) => (
+ <StaggerItem key={a.slug}>
+ <HoverLift className="bs-card-lift group h-full p-6 flex flex-col">
+ <span className="bs-chip mb-4">{a.sousTitre}</span>
+ <h3 className="font-display text-base font-semibold text-ink">{a.titre}</h3>
+ <p className="mt-2 flex-1 text-sm text-ink-soft">{a.intro}</p>
+ <div className="mt-5 flex items-center justify-between border-t border-line pt-4">
+ <Link href={`/ressources/${a.slug}`} className="inline-flex items-center gap-1.5 text-sm font-medium text-ink transition-colors group-hover:text-brand">
+ Consulter
+ <ArrowUpRight className="h-4 w-4" />
+ </Link>
+ <a href={a.fichier} download className="inline-flex items-center gap-1.5 text-xs text-brand/60 transition-colors hover:text-brand">
+ <Download className="h-3.5 w-3.5" />
+ PDF
+ </a>
  </div>
- <h3 className="font-display font-semibold mb-2">Modes opératoires</h3>
- 
- </ScaleIn>
+ </HoverLift>
  </StaggerItem>
+ ))}
  </StaggerContainer>
  </section>
 
