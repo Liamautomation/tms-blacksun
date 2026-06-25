@@ -3,15 +3,15 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-1.5 rounded-lg text-sm font-medium whitespace-nowrap transition-all duration-200 outline-none select-none focus-visible:ring-2 focus-visible:ring-gold/50 focus-visible:ring-offset-2 focus-visible:ring-offset-black-sun disabled:pointer-events-none disabled:opacity-40 active:scale-[0.98] [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+  "inline-flex items-center justify-center gap-1.5 rounded-lg text-sm font-medium whitespace-nowrap transition-all duration-200 outline-none select-none focus-visible:ring-2 focus-visible:ring-brand/50 focus-visible:ring-offset-2 focus-visible:ring-offset-paper disabled:pointer-events-none disabled:opacity-40 active:scale-[0.98] [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
   {
     variants: {
       variant: {
-        default: "bg-gold text-black-sun hover:bg-gold-light shadow-sm",
-        outline: "border border-gold/30 text-cream hover:bg-gold/10 hover:border-gold/50",
-        secondary: "bg-cream-muted/10 text-cream hover:bg-cream-muted/20 border border-cream-muted/10",
-        ghost: "text-cream-muted hover:text-cream hover:bg-cream-muted/5",
-        destructive: "bg-red-500/10 text-red-400 hover:bg-red-500/20 border border-red-500/20",
+        default: "bg-brand text-white hover:bg-brand-deep shadow-sm",
+        outline: "border border-border text-ink hover:bg-brand-soft hover:border-brand",
+        secondary: "bg-card-tint text-ink hover:bg-brand-mist border border-line",
+        ghost: "text-ink-soft hover:text-ink hover:bg-brand-mist",
+        destructive: "bg-alert/10 text-alert hover:bg-alert/20 border border-alert/20",
       },
       size: {
         default: "h-9 px-4 py-2",
