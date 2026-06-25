@@ -1,4 +1,4 @@
-import { FileText } from "lucide-react";
+import { FileText, Download, Maximize2 } from "lucide-react";
 import { ScaleIn, FadeIn, HoverGlow } from "@/components/Animated";
 
 export default function DuerpPage() {
@@ -24,13 +24,43 @@ export default function DuerpPage() {
 
  {/* Carte document — teintée avec glow */}
  <FadeIn delay={0.12}>
- <HoverGlow className="bs-card-tint mt-10 p-10">
- <p className="text-sm leading-relaxed text-ink-soft">Le document sera disponible prochainement.</p>
- <div className="mt-4 inline-flex items-center gap-2 rounded-2xl bg-card/50 px-5 py-3 text-sm text-ink-muted">
- <FileText className="h-4 w-4" />
- Document en cours de finalisation.
+ <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+ <a
+ href="/documents/duerp-poko55.pdf"
+ target="_blank"
+ rel="noopener noreferrer"
+ className="inline-flex items-center gap-2 rounded-2xl border border-line bg-card px-5 py-3 text-sm font-medium text-ink transition-transform hover:-translate-y-0.5"
+ >
+ <Maximize2 className="h-4 w-4" aria-hidden="true" />
+ Plein écran / Imprimer
+ </a>
+ <a
+ href="/documents/duerp-poko55.pdf"
+ download
+ className="inline-flex items-center gap-2 rounded-2xl border border-line bg-brand-soft px-5 py-3 text-sm font-medium text-brand transition-transform hover:-translate-y-0.5"
+ >
+ <Download className="h-4 w-4" aria-hidden="true" />
+ Télécharger le DUERP (PDF)
+ </a>
  </div>
- </HoverGlow>
+
+ <iframe
+ src="/documents/duerp-poko55.pdf"
+ title="Document Unique d'Évaluation des Risques Professionnels — POKO 55"
+ className="mt-8 h-[80vh] min-h-[480px] w-full rounded-3xl border border-line bg-card"
+ />
+ <p className="mt-3 text-sm text-ink-soft">
+ Le document ne s&apos;affiche pas&nbsp;?{" "}
+ <a
+ href="/documents/duerp-poko55.pdf"
+ target="_blank"
+ rel="noopener noreferrer"
+ className="font-medium text-brand underline"
+ >
+ Ouvrez-le dans un nouvel onglet
+ </a>
+ .
+ </p>
  </FadeIn>
 
  {/* Liseré doré — séparation */}
